@@ -3,44 +3,54 @@
 @import "tw-animate-css";
 
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: "Cormorant Garamond";
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url('/fonts/CormorantGaramond-300-italic.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("/fonts/CormorantGaramond-300-italic.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: "Cormorant Garamond";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/fonts/CormorantGaramond-300-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("/fonts/CormorantGaramond-300-normal.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: "Cormorant Garamond";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/CormorantGaramond-400-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("/fonts/CormorantGaramond-400-normal.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/fonts/Jost-300-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("/fonts/Jost-300-normal.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/Jost-400-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("/fonts/Jost-400-normal.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -118,6 +128,10 @@
     color-mix(in oklab, var(--metal) 70%, transparent)
   );
   --shadow-glow: 0 40px 120px -40px color-mix(in oklab, var(--metal) 22%, transparent);
+  --cherry: oklch(0.62 0.21 16);
+  --jasmine: oklch(0.9 0.1 94);
+  --datura: oklch(0.67 0.15 152);
+  --monsoon: oklch(0.55 0.13 242);
 }
 
 .dark {
@@ -140,9 +154,120 @@
     font-family: var(--font-sans);
   }
 
+  img {
+    content-visibility: auto;
+  }
+
   ::selection {
     background: color-mix(in oklab, var(--metal) 35%, transparent);
   }
+}
+
+.prismatic-site::before {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.28;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0 49.8%,
+    oklch(0.95 0.012 90 / 8%) 50%,
+    transparent 50.2%
+  );
+  background-size: 9rem 100%;
+  mask-image: linear-gradient(to bottom, black, transparent 30%, transparent 75%, black);
+}
+
+.hero-prism {
+  opacity: 0.58;
+  background:
+    radial-gradient(ellipse at 12% 100%, var(--cherry), transparent 46%),
+    radial-gradient(ellipse at 42% 110%, var(--datura), transparent 42%),
+    radial-gradient(ellipse at 76% 105%, var(--monsoon), transparent 45%);
+  mix-blend-mode: screen;
+}
+
+.scent-dots {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.scent-dots i {
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 50%;
+  box-shadow: 0 0 18px currentColor;
+}
+.dot-cherry {
+  background: var(--cherry);
+  color: var(--cherry);
+}
+.dot-jasmine {
+  background: var(--jasmine);
+  color: var(--jasmine);
+}
+.dot-datura {
+  background: var(--datura);
+  color: var(--datura);
+}
+.dot-night {
+  background: var(--monsoon);
+  color: var(--monsoon);
+}
+
+.scent-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.scent-ribbon span {
+  flex: 1 1 10rem;
+  padding: 0.7rem 1rem;
+  color: oklch(0.14 0.028 264);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+.scent-ribbon span:nth-child(1) {
+  background: var(--cherry);
+}
+.scent-ribbon span:nth-child(2) {
+  background: var(--jasmine);
+}
+.scent-ribbon span:nth-child(3) {
+  background: var(--datura);
+}
+.scent-ribbon span:nth-child(4) {
+  background: var(--monsoon);
+  color: var(--ivory);
+}
+
+.story-orbit {
+  overflow: hidden;
+  isolation: isolate;
+}
+.orbit-word {
+  position: absolute;
+  z-index: -1;
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 20vw, 22rem);
+  font-style: italic;
+  line-height: 0.7;
+  color: transparent;
+  -webkit-text-stroke: 1px oklch(0.95 0.012 90 / 8%);
+  user-select: none;
+}
+.orbit-word-left {
+  top: 12%;
+  left: -0.1em;
+}
+.orbit-word-right {
+  right: -0.1em;
+  bottom: 10%;
 }
 
 @utility font-display {

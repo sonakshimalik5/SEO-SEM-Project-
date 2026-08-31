@@ -17,7 +17,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "ALTAIR by Sarkar — Nocturnal Parfum" },
       {
         property: "og:description",
-        content: "For nights that smell like rain and feel like confidence. A nocturnal floral-woody parfum.",
+        content:
+          "For nights that smell like rain and feel like confidence. A nocturnal floral-woody parfum.",
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "/" },
@@ -51,7 +52,6 @@ export const Route = createFileRoute("/")({
   component: Altair,
 });
 
-
 const NOTES = [
   {
     name: "Night Jasmine",
@@ -81,14 +81,29 @@ const NOTES = [
 ];
 
 const JOURNEY = [
-  { step: "01", title: "ARRIVAL", notes: "Cherry · Mulberry", text: "The first minute. Wet fruit, glossy and dark." },
-  { step: "02", title: "BLOOM", notes: "Night Jasmine · Datura", text: "The hour it belongs to. Petals open in the dark." },
-  { step: "03", title: "LINGER", notes: "Wood", text: "What remains at 3 a.m. Warm, quiet, unmistakable." },
+  {
+    step: "01",
+    title: "ARRIVAL",
+    notes: "Cherry · Mulberry",
+    text: "The first minute. Wet fruit, glossy and dark.",
+  },
+  {
+    step: "02",
+    title: "BLOOM",
+    notes: "Night Jasmine · Datura",
+    text: "The hour it belongs to. Petals open in the dark.",
+  },
+  {
+    step: "03",
+    title: "LINGER",
+    notes: "Wood",
+    text: "What remains at 3 a.m. Warm, quiet, unmistakable.",
+  },
 ];
 
 function Altair() {
   return (
-    <div className="relative overflow-x-hidden bg-background">
+    <div className="prismatic-site relative overflow-x-hidden bg-background">
       <Nav />
       <main>
         <Hero />
@@ -111,7 +126,7 @@ function Nav() {
         <a href="#top" className="font-display text-lg tracking-[0.5em] text-foreground">
           SARKAR
         </a>
-        <div className="hidden items-center gap-10 md:flex">
+        <div className="hidden items-center gap-10 md:flex" aria-label="Primary navigation">
           {[
             ["Fragrance", "#fragrance"],
             ["Notes", "#notes"],
@@ -153,6 +168,10 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/35 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-transparent to-background/60" />
+      <div
+        className="hero-prism pointer-events-none absolute inset-x-0 bottom-0 h-[38%]"
+        aria-hidden="true"
+      />
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-6 pb-20 pt-32 lg:px-10 lg:pb-28">
         <p className="intro eyebrow">Sarkar · New Release</p>
@@ -185,12 +204,23 @@ function Hero() {
             </a>
           </div>
         </div>
-        <p
-          className="intro mt-16 text-[0.65rem] uppercase tracking-[0.4em] text-muted-foreground"
+        <div
+          className="intro mt-16 flex flex-wrap items-center gap-x-5 gap-y-3"
           style={{ animationDelay: "560ms" }}
         >
-          Floral · Fruity · Woody · Night
-        </p>
+          <p className="text-[0.65rem] uppercase tracking-[0.4em] text-muted-foreground">
+            Floral · Fruity · Woody · Night
+          </p>
+          <span
+            className="scent-dots"
+            aria-label="Altair colour palette: cherry, jasmine, datura and midnight"
+          >
+            <i className="dot-cherry" />
+            <i className="dot-jasmine" />
+            <i className="dot-datura" />
+            <i className="dot-night" />
+          </span>
+        </div>
       </div>
     </section>
   );
@@ -209,7 +239,13 @@ function Notes() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <div className="scent-ribbon mt-12" aria-hidden="true">
+          <span>CHERRY GLOSS</span>
+          <span>JASMINE MILK</span>
+          <span>DATURA GREEN</span>
+          <span>MONSOON BLUE</span>
+        </div>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <ul className="divide-y divide-border/70 border-y border-border/70">
             {NOTES.map((n, i) => (
               <Reveal as="li" key={n.name} delay={i * 90}>
@@ -226,7 +262,9 @@ function Notes() {
                         {n.kind}
                       </span>
                     </div>
-                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{n.text}</p>
+                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                      {n.text}
+                    </p>
                   </div>
                 </div>
               </Reveal>
@@ -257,7 +295,10 @@ function Notes() {
 
 function Journey() {
   return (
-    <section id="journey" className="relative border-t border-border/60 px-6 py-28 lg:px-10 lg:py-40">
+    <section
+      id="journey"
+      className="relative border-t border-border/60 px-6 py-28 lg:px-10 lg:py-40"
+    >
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="eyebrow">Scent journey</p>
@@ -272,7 +313,9 @@ function Journey() {
             <Reveal key={j.title} delay={i * 140}>
               <article className="group h-full bg-background p-8 transition-colors duration-700 hover:bg-card lg:p-12">
                 <span className="text-[0.6rem] tracking-[0.4em] text-accent">{j.step}</span>
-                <h3 className="mt-8 font-display text-3xl tracking-[0.2em] lg:text-4xl">{j.title}</h3>
+                <h3 className="mt-8 font-display text-3xl tracking-[0.2em] lg:text-4xl">
+                  {j.title}
+                </h3>
                 <div className="hairline my-6" />
                 <p className="text-xs uppercase tracking-[0.25em] text-foreground/80">{j.notes}</p>
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{j.text}</p>
@@ -287,7 +330,13 @@ function Journey() {
 
 function Story() {
   return (
-    <section className="relative border-t border-border/60 px-6 py-32 lg:px-10 lg:py-48">
+    <section className="story-orbit relative border-t border-border/60 px-6 py-32 lg:px-10 lg:py-48">
+      <span className="orbit-word orbit-word-left" aria-hidden="true">
+        AFTER
+      </span>
+      <span className="orbit-word orbit-word-right" aria-hidden="true">
+        RAIN
+      </span>
       <div className="mx-auto max-w-4xl text-center">
         <Reveal>
           <h2 className="font-display text-4xl leading-[1.15] sm:text-6xl lg:text-7xl">
@@ -349,8 +398,8 @@ function Offer() {
           </Reveal>
           <Reveal delay={360}>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Night jasmine and datura over dark cherry and mulberry, resolved on rain-darkened wood.
-              Built for the hours after midnight.
+              Night jasmine and datura over dark cherry and mulberry, resolved on rain-darkened
+              wood. Built for the hours after midnight.
             </p>
           </Reveal>
           <Reveal delay={440}>
@@ -387,7 +436,8 @@ function Campaign() {
             </Reveal>
             <Reveal delay={120}>
               <p className="mt-5 max-w-2xl font-display text-3xl italic leading-snug sm:text-4xl lg:text-5xl">
-                Rain on stone, berries in the dark, a flower that only opens when nobody is watching.
+                Rain on stone, berries in the dark, a flower that only opens when nobody is
+                watching.
               </p>
             </Reveal>
           </div>
@@ -399,7 +449,10 @@ function Campaign() {
 
 function FinalCta() {
   return (
-    <section id="final" className="relative border-t border-border/60 px-6 py-32 text-center lg:py-44">
+    <section
+      id="final"
+      className="relative border-t border-border/60 px-6 py-32 text-center lg:py-44"
+    >
       <div className="mx-auto max-w-4xl">
         <Reveal>
           <h2 className="font-display text-4xl leading-tight tracking-[0.06em] sm:text-6xl lg:text-7xl">
@@ -436,7 +489,7 @@ function Footer() {
             For nights that smell like rain and feel like confidence.
           </p>
         </div>
-        <nav className="flex flex-wrap gap-x-10 gap-y-4">
+        <nav className="flex flex-wrap gap-x-10 gap-y-4" aria-label="Footer navigation">
           {[
             ["Home", "#top"],
             ["Fragrance", "#fragrance"],
