@@ -5,6 +5,29 @@ import productImg from "@/assets/altair-product.webp";
 import campaignImg from "@/assets/altair-campaign.webp";
 import notesImg from "@/assets/altair-notes.webp";
 
+const FAQS = [
+  {
+    q: "What does ALTAIR by Sarkar smell like?",
+    a: "ALTAIR is a nocturnal floral-woody parfum. It opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened polished wood.",
+  },
+  {
+    q: "What are the notes in ALTAIR?",
+    a: "Top: cherry and mulberry. Heart: night jasmine and datura. Base: wood. The profile is floral, fruity, woody and made for night.",
+  },
+  {
+    q: "How much does ALTAIR cost?",
+    a: "ALTAIR is ₹1,199 for a 100 ML bottle of parfum, sold by Sarkar.",
+  },
+  {
+    q: "When should I wear ALTAIR?",
+    a: "ALTAIR is designed for evenings and nights — date nights, parties and rainy monsoon evenings, when the jasmine and datura feel most alive.",
+  },
+  {
+    q: "Is ALTAIR unisex?",
+    a: "Yes. Its balance of dark fruit, white florals and wood suits anyone who likes a confident, night-time scent.",
+  },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -33,18 +56,47 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Product",
-          name: "ALTAIR",
-          brand: { "@type": "Brand", name: "Sarkar" },
-          category: "Parfum",
-          description:
-            "A nocturnal floral-woody parfum with night jasmine, datura, cherry, mulberry and wood. 100 ML.",
-          offers: {
-            "@type": "Offer",
-            price: "1199",
-            priceCurrency: "INR",
-            availability: "https://schema.org/InStock",
-          },
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://sarkar.store/#org",
+              name: "Sarkar",
+              url: "https://sarkar.store",
+            },
+            {
+              "@type": "Product",
+              name: "ALTAIR",
+              sku: "SARKAR-ALTAIR-100",
+              brand: { "@id": "https://sarkar.store/#org" },
+              category: "Parfum",
+              url: "https://altair-midnight-aura.lovable.app/",
+              description:
+                "ALTAIR by Sarkar is a nocturnal floral-woody parfum with night jasmine, datura, cherry, mulberry and wood. 100 ML parfum, ₹1,199.",
+              size: "100 ML",
+              additionalProperty: [
+                { "@type": "PropertyValue", name: "Top notes", value: "Cherry, Mulberry" },
+                { "@type": "PropertyValue", name: "Heart notes", value: "Night Jasmine, Datura" },
+                { "@type": "PropertyValue", name: "Base notes", value: "Wood" },
+                { "@type": "PropertyValue", name: "Fragrance family", value: "Floral, Fruity, Woody" },
+                { "@type": "PropertyValue", name: "Concentration", value: "Parfum" },
+              ],
+              offers: {
+                "@type": "Offer",
+                price: "1199",
+                priceCurrency: "INR",
+                availability: "https://schema.org/InStock",
+                seller: { "@id": "https://sarkar.store/#org" },
+              },
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: FAQS.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+          ],
         }),
       },
     ],
@@ -112,6 +164,7 @@ function Altair() {
         <Story />
         <Offer />
         <Campaign />
+        <Faq />
         <FinalCta />
       </main>
       <Footer />
@@ -442,6 +495,32 @@ function Campaign() {
             </Reveal>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Faq() {
+  return (
+    <section id="faq" className="relative border-t border-border/60 px-6 py-28 lg:px-10 lg:py-36">
+      <div className="mx-auto max-w-4xl">
+        <Reveal>
+          <p className="eyebrow">Questions</p>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="mt-6 font-display text-3xl tracking-wide sm:text-5xl">About ALTAIR</h2>
+        </Reveal>
+        <dl className="mt-12 divide-y divide-border/70 border-y border-border/70">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group py-6">
+              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 font-display text-xl tracking-wide text-foreground sm:text-2xl">
+                <dt>{f.q}</dt>
+                <span className="text-accent transition-transform duration-500 group-open:rotate-45">+</span>
+              </summary>
+              <dd className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
+            </details>
+          ))}
+        </dl>
       </div>
     </section>
   );

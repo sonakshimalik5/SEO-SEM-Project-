@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: set BASE_URL to the live domain once the project is named or a custom domain is added. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/</loc>
+    <loc>https://altair-midnight-aura.lovable.app/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
