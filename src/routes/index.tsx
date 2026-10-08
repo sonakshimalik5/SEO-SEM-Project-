@@ -548,6 +548,27 @@ function Faq() {
         <Reveal delay={100}>
           <h2 className="mt-6 font-display text-3xl tracking-wide sm:text-5xl">About ALTAIR</h2>
         </Reveal>
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          ALTAIR by Sarkar is a 100 ML nocturnal floral-woody parfum priced at ₹1,199, with notes
+          of cherry, mulberry, night jasmine, datura and wood.
+        </p>
+        <Reveal delay={150}>
+          <h3 className="mt-14 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Key facts</h3>
+          <table className="mt-5 w-full border-y border-border/70 text-left text-sm">
+            <caption className="sr-only">ALTAIR by Sarkar product facts</caption>
+            <tbody className="divide-y divide-border/70">
+              {FACTS.map(([k, v]) => (
+                <tr key={k}>
+                  <th scope="row" className="w-1/3 py-3 pr-6 text-[0.65rem] font-normal uppercase tracking-[0.3em] text-muted-foreground">
+                    {k}
+                  </th>
+                  <td className="py-3 text-foreground">{v}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <h3 className="mt-16 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Frequently asked</h3>
+        </Reveal>
         <dl className="mt-12 divide-y divide-border/70 border-y border-border/70">
           {FAQS.map((f) => (
             <details key={f.q} className="group py-6">
