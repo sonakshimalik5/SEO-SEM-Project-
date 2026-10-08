@@ -5,26 +5,64 @@ import productImg from "@/assets/altair-product.webp";
 import campaignImg from "@/assets/altair-campaign.webp";
 import notesImg from "@/assets/altair-notes.webp";
 
+const FACTS: [string, string][] = [
+  ["Product", "ALTAIR"],
+  ["Brand", "Sarkar (sarkar.store)"],
+  ["Type", "Parfum"],
+  ["Size", "100 ML"],
+  ["Price", "₹1,199 (INR)"],
+  ["Fragrance family", "Floral · Fruity · Woody"],
+  ["Top notes", "Cherry, Mulberry"],
+  ["Heart notes", "Night Jasmine, Datura"],
+  ["Base notes", "Wood"],
+  ["Best for", "Evenings, nights, date nights, monsoon and rainy weather"],
+  ["Gender", "Unisex"],
+];
+
 const FAQS = [
   {
+    q: "What is ALTAIR by Sarkar?",
+    a: "ALTAIR is a 100 ML nocturnal floral-woody parfum by the Indian fragrance brand Sarkar, priced at ₹1,199. Its tagline is “For nights that smell like rain and feel like confidence.”",
+  },
+  {
     q: "What does ALTAIR by Sarkar smell like?",
-    a: "ALTAIR is a nocturnal floral-woody parfum. It opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened polished wood.",
+    a: "ALTAIR smells like a rainy night: it opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened polished wood.",
   },
   {
-    q: "What are the notes in ALTAIR?",
-    a: "Top: cherry and mulberry. Heart: night jasmine and datura. Base: wood. The profile is floral, fruity, woody and made for night.",
+    q: "What are the top, heart and base notes of ALTAIR?",
+    a: "ALTAIR's top notes are cherry and mulberry, its heart notes are night jasmine and datura, and its base note is wood.",
   },
   {
-    q: "How much does ALTAIR cost?",
-    a: "ALTAIR is ₹1,199 for a 100 ML bottle of parfum, sold by Sarkar.",
+    q: "How much does ALTAIR perfume cost?",
+    a: "ALTAIR by Sarkar costs ₹1,199 for a 100 ML bottle of parfum.",
   },
   {
-    q: "When should I wear ALTAIR?",
-    a: "ALTAIR is designed for evenings and nights — date nights, parties and rainy monsoon evenings, when the jasmine and datura feel most alive.",
+    q: "What fragrance family is ALTAIR?",
+    a: "ALTAIR belongs to the floral-fruity-woody family, with a night-time character built around white night-blooming flowers.",
+  },
+  {
+    q: "When is the best time to wear ALTAIR?",
+    a: "ALTAIR is best worn in the evening and at night — for date nights, parties and rainy monsoon evenings.",
+  },
+  {
+    q: "Is ALTAIR a good perfume for monsoon or rainy weather?",
+    a: "Yes. ALTAIR was created around the smell of rain at night, so its jasmine, dark berries and wet-wood accord suit the Indian monsoon season.",
   },
   {
     q: "Is ALTAIR unisex?",
-    a: "Yes. Its balance of dark fruit, white florals and wood suits anyone who likes a confident, night-time scent.",
+    a: "Yes. ALTAIR's balance of dark fruit, white florals and wood suits anyone who likes a confident, night-time scent.",
+  },
+  {
+    q: "What is datura in perfume?",
+    a: "Datura is a trumpet-shaped flower that blooms at night. In ALTAIR it adds a green, hypnotic, slightly dark floral facet alongside night jasmine.",
+  },
+  {
+    q: "Where can I buy ALTAIR by Sarkar?",
+    a: "ALTAIR is sold by Sarkar through its official store at sarkar.store.",
+  },
+  {
+    q: "Is ALTAIR a good affordable luxury perfume in India?",
+    a: "ALTAIR offers a 100 ML parfum-strength fragrance with a layered night-floral composition at ₹1,199, positioning it as premium yet accessible.",
   },
 ];
 
@@ -509,6 +547,27 @@ function Faq() {
         </Reveal>
         <Reveal delay={100}>
           <h2 className="mt-6 font-display text-3xl tracking-wide sm:text-5xl">About ALTAIR</h2>
+        </Reveal>
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          ALTAIR by Sarkar is a 100 ML nocturnal floral-woody parfum priced at ₹1,199, with notes
+          of cherry, mulberry, night jasmine, datura and wood.
+        </p>
+        <Reveal delay={150}>
+          <h3 className="mt-14 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Key facts</h3>
+          <table className="mt-5 w-full border-y border-border/70 text-left text-sm">
+            <caption className="sr-only">ALTAIR by Sarkar product facts</caption>
+            <tbody className="divide-y divide-border/70">
+              {FACTS.map(([k, v]) => (
+                <tr key={k}>
+                  <th scope="row" className="w-1/3 py-3 pr-6 text-[0.65rem] font-normal uppercase tracking-[0.3em] text-muted-foreground">
+                    {k}
+                  </th>
+                  <td className="py-3 text-foreground">{v}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <h3 className="mt-16 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Frequently asked</h3>
         </Reveal>
         <dl className="mt-12 divide-y divide-border/70 border-y border-border/70">
           {FAQS.map((f) => (
