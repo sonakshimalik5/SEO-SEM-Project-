@@ -5,10 +5,10 @@ import productImg from "@/assets/altair-product.webp";
 import campaignImg from "@/assets/altair-campaign.webp";
 import notesImg from "@/assets/altair-notes.webp";
 
-export const FACTS: [string, string][] = [
+const FACTS: [string, string][] = [
   ["Product", "ALTAIR"],
   ["Brand", "Sarkar (sarkar.store)"],
-  ["Type", "Parfum (Extrait de Parfum concentration)"],
+  ["Type", "Parfum"],
   ["Size", "100 ML"],
   ["Price", "₹1,199 (INR)"],
   ["Fragrance family", "Floral · Fruity · Woody"],
