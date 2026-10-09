@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
+import { ORG_SCHEMA, SITE, PUBLISHED, UPDATED } from "@/lib/brand";
 import heroImg from "@/assets/altair-hero.webp";
 import productImg from "@/assets/altair-product.webp";
 import campaignImg from "@/assets/altair-campaign.webp";
@@ -95,11 +96,34 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
+            ORG_SCHEMA,
             {
-              "@type": "Organization",
-              "@id": "https://sarkar.store/#org",
-              name: "Sarkar",
-              url: "https://sarkar.store",
+              "@type": "WebSite",
+              "@id": `${SITE}/#website`,
+              url: `${SITE}/`,
+              name: "ALTAIR by Sarkar",
+              inLanguage: "en-IN",
+              publisher: { "@id": "https://sarkar.store/#org" },
+            },
+            {
+              "@type": "WebPage",
+              "@id": `${SITE}/#webpage`,
+              url: `${SITE}/`,
+              name: "ALTAIR by Sarkar — Nocturnal Floral-Woody Parfum",
+              isPartOf: { "@id": `${SITE}/#website` },
+              about: { "@id": `${SITE}/#product` },
+              author: { "@id": "https://sarkar.store/#org" },
+              publisher: { "@id": "https://sarkar.store/#org" },
+              datePublished: PUBLISHED,
+              dateModified: UPDATED,
+              inLanguage: "en-IN",
+              breadcrumb: {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Sarkar", item: "https://sarkar.store" },
+                  { "@type": "ListItem", position: 2, name: "ALTAIR", item: `${SITE}/` },
+                ],
+              },
             },
             {
               "@type": "Product",
@@ -548,9 +572,16 @@ function Faq() {
         <Reveal delay={100}>
           <h2 className="mt-6 font-display text-3xl tracking-wide sm:text-5xl">About ALTAIR</h2>
         </Reveal>
+        <p className="mt-6 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
+          By the <a href="/about" className="underline underline-offset-4 hover:text-foreground">Sarkar fragrance team</a>
+          {" · "}Published <time dateTime={PUBLISHED}>8 October 2026</time>
+          {" · "}Updated <time dateTime={UPDATED}>8 October 2026</time>
+        </p>
         <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           ALTAIR by Sarkar is a 100 ML nocturnal floral-woody parfum priced at ₹1,199, with notes
-          of cherry, mulberry, night jasmine, datura and wood.
+          of cherry, mulberry, night jasmine, datura and wood. All details on this page come
+          directly from Sarkar, the brand that created and sells ALTAIR at{" "}
+          <a href="https://sarkar.store" className="underline underline-offset-4 hover:text-foreground">sarkar.store</a>.
         </p>
         <Reveal delay={150}>
           <h3 className="mt-14 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Key facts</h3>
@@ -632,8 +663,10 @@ function Footer() {
             ["Home", "#top"],
             ["Fragrance", "#fragrance"],
             ["Notes", "#notes"],
-            ["Contact", "#footer"],
-            ["Instagram", "https://instagram.com"],
+            ["FAQ", "#faq"],
+            ["About Sarkar", "/about"],
+            ["Contact", "/about#contact"],
+            ["Sarkar Store", "https://sarkar.store"],
           ].map(([label, href]) => (
             <a
               key={label}
