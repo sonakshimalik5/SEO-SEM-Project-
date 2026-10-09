@@ -669,6 +669,19 @@ function Footer() {
           ))}
         </nav>
       </div>
+      <div className="mx-auto mt-10 flex max-w-7xl flex-wrap gap-x-8 gap-y-3" aria-label="Sarkar on social media">
+        {SOCIALS.map(([label, href]) => (
+          <a
+            key={label}
+            href={href}
+            rel="me noopener"
+            target="_blank"
+            className="text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
       <div className="hairline my-10" />
       <p className="mx-auto max-w-7xl text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground">
         © {new Date().getFullYear()} Sarkar · ALTAIR. All rights reserved.
