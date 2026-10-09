@@ -127,6 +127,7 @@ export const Route = createFileRoute("/")({
             },
             {
               "@type": "Product",
+              "@id": `${SITE}/#product`,
               name: "ALTAIR",
               sku: "SARKAR-ALTAIR-100",
               brand: { "@id": "https://sarkar.store/#org" },
