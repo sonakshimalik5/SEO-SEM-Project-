@@ -59,11 +59,7 @@ const FAQS = [
   },
   {
     q: "Where can I buy ALTAIR by Sarkar?",
-    a: "ALTAIR is sold by Sarkar through its official store at sarkar.store.",
-  },
-  {
-    q: "Is ALTAIR a good affordable luxury perfume in India?",
-    a: "ALTAIR offers a 100 ML parfum-strength fragrance with a layered night-floral composition at ₹1,199, positioning it as premium yet accessible.",
+    a: "ALTAIR is sold by Sarkar through its official online store at www.sarkar.store.",
   },
 ];
 
@@ -117,13 +113,6 @@ export const Route = createFileRoute("/")({
               datePublished: PUBLISHED,
               dateModified: UPDATED,
               inLanguage: "en-IN",
-              breadcrumb: {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Sarkar", item: "https://sarkar.store" },
-                  { "@type": "ListItem", position: 2, name: "ALTAIR", item: `${SITE}/` },
-                ],
-              },
             },
             {
               "@type": "Product",
