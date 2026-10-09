@@ -45,3 +45,4 @@ A: From Sarkar's official store, sarkar.store.
 - [ALTAIR landing page](https://altair-midnight-aura.lovable.app/)
 - [Questions about ALTAIR](https://altair-midnight-aura.lovable.app/#faq)
 - [Sarkar store](https://sarkar.store)
+- [About Sarkar](https://altair-midnight-aura.lovable.app/about)
