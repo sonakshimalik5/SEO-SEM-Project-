@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { ORG_SCHEMA, SITE, PUBLISHED, UPDATED } from "@/lib/brand";
+import { ORG_SCHEMA, ORG_ID, SITE, PUBLISHED, UPDATED, PRODUCT_IMAGE, SOCIALS } from "@/lib/brand";
 import heroImg from "@/assets/altair-hero.webp";
 import productImg from "@/assets/altair-product.webp";
 import campaignImg from "@/assets/altair-campaign.webp";
@@ -59,11 +59,7 @@ const FAQS = [
   },
   {
     q: "Where can I buy ALTAIR by Sarkar?",
-    a: "ALTAIR is sold by Sarkar through its official store at sarkar.store.",
-  },
-  {
-    q: "Is ALTAIR a good affordable luxury perfume in India?",
-    a: "ALTAIR offers a 100 ML parfum-strength fragrance with a layered night-floral composition at ₹1,199, positioning it as premium yet accessible.",
+    a: "ALTAIR is sold by Sarkar through its official online store at www.sarkar.store.",
   },
 ];
 
@@ -103,7 +99,7 @@ export const Route = createFileRoute("/")({
               url: `${SITE}/`,
               name: "ALTAIR by Sarkar",
               inLanguage: "en-IN",
-              publisher: { "@id": "https://sarkar.store/#org" },
+              publisher: { "@id": ORG_ID },
             },
             {
               "@type": "WebPage",
@@ -112,25 +108,18 @@ export const Route = createFileRoute("/")({
               name: "ALTAIR by Sarkar — Nocturnal Floral-Woody Parfum",
               isPartOf: { "@id": `${SITE}/#website` },
               about: { "@id": `${SITE}/#product` },
-              author: { "@id": "https://sarkar.store/#org" },
-              publisher: { "@id": "https://sarkar.store/#org" },
+              author: { "@id": ORG_ID },
+              publisher: { "@id": ORG_ID },
               datePublished: PUBLISHED,
               dateModified: UPDATED,
               inLanguage: "en-IN",
-              breadcrumb: {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Sarkar", item: "https://sarkar.store" },
-                  { "@type": "ListItem", position: 2, name: "ALTAIR", item: `${SITE}/` },
-                ],
-              },
             },
             {
               "@type": "Product",
+              image: [PRODUCT_IMAGE],
               "@id": `${SITE}/#product`,
               name: "ALTAIR",
-              sku: "SARKAR-ALTAIR-100",
-              brand: { "@id": "https://sarkar.store/#org" },
+              brand: { "@id": ORG_ID },
               category: "Parfum",
               url: "https://altair-midnight-aura.lovable.app/",
               description:
@@ -148,7 +137,7 @@ export const Route = createFileRoute("/")({
                 price: "1199",
                 priceCurrency: "INR",
                 availability: "https://schema.org/InStock",
-                seller: { "@id": "https://sarkar.store/#org" },
+                seller: { "@id": ORG_ID },
               },
             },
             {
@@ -247,7 +236,8 @@ function Nav() {
             ["Fragrance", "#fragrance"],
             ["Notes", "#notes"],
             ["Journey", "#journey"],
-            ["Contact", "#footer"],
+            ["About", "/about"],
+            ["Contact", "/about#contact"],
           ].map(([label, href]) => (
             <a
               key={label}
@@ -582,7 +572,7 @@ function Faq() {
           ALTAIR by Sarkar is a 100 ML nocturnal floral-woody parfum priced at ₹1,199, with notes
           of cherry, mulberry, night jasmine, datura and wood. All details on this page come
           directly from Sarkar, the brand that created and sells ALTAIR at{" "}
-          <a href="https://sarkar.store" className="underline underline-offset-4 hover:text-foreground">sarkar.store</a>.
+          <a href="https://www.sarkar.store" className="underline underline-offset-4 hover:text-foreground">sarkar.store</a>.
         </p>
         <Reveal delay={150}>
           <h3 className="mt-14 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Key facts</h3>
@@ -601,17 +591,17 @@ function Faq() {
           </table>
           <h3 className="mt-16 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Frequently asked</h3>
         </Reveal>
-        <dl className="mt-12 divide-y divide-border/70 border-y border-border/70">
+        <div className="mt-12 divide-y divide-border/70 border-y border-border/70">
           {FAQS.map((f) => (
             <details key={f.q} className="group py-6">
               <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 font-display text-xl tracking-wide text-foreground sm:text-2xl">
-                <dt>{f.q}</dt>
+                <h4 className="font-normal">{f.q}</h4>
                 <span className="text-accent transition-transform duration-500 group-open:rotate-45">+</span>
               </summary>
-              <dd className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{f.a}</p>
             </details>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   );
@@ -667,7 +657,7 @@ function Footer() {
             ["FAQ", "#faq"],
             ["About Sarkar", "/about"],
             ["Contact", "/about#contact"],
-            ["Sarkar Store", "https://sarkar.store"],
+            ["Sarkar Store", "https://www.sarkar.store"],
           ].map(([label, href]) => (
             <a
               key={label}
@@ -678,6 +668,19 @@ function Footer() {
             </a>
           ))}
         </nav>
+      </div>
+      <div className="mx-auto mt-10 flex max-w-7xl flex-wrap gap-x-8 gap-y-3" aria-label="Sarkar on social media">
+        {SOCIALS.map(([label, href]) => (
+          <a
+            key={label}
+            href={href}
+            rel="me noopener"
+            target="_blank"
+            className="text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {label}
+          </a>
+        ))}
       </div>
       <div className="hairline my-10" />
       <p className="mx-auto max-w-7xl text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground">
