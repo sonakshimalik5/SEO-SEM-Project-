@@ -566,7 +566,7 @@ function Faq() {
         <p className="mt-6 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
           By the <a href="/about" className="underline underline-offset-4 hover:text-foreground">Sarkar fragrance team</a>
           {" · "}Published <time dateTime={PUBLISHED}>8 October 2026</time>
-          {" · "}Updated <time dateTime={UPDATED}>8 October 2026</time>
+          {" · "}Updated <time dateTime={UPDATED}>15 October 2026</time>
         </p>
         <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           ALTAIR by Sarkar is a 100 ML nocturnal floral-woody parfum priced at ₹1,199, with notes
