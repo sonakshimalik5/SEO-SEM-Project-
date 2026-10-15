@@ -79,11 +79,11 @@ export const Route = createFileRoute("/")({
           "For nights that smell like rain and feel like confidence. A nocturnal floral-woody parfum.",
       },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: `${SITE}/` },
       { rel: "preload", as: "image", href: heroImg, type: "image/webp", fetchPriority: "high" },
     ],
     scripts: [
