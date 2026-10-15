@@ -510,10 +510,10 @@ function Offer() {
           </Reveal>
           <Reveal delay={440}>
             <a
-              href="#final"
+              href="https://www.sarkar.store" target="_blank" rel="noopener"
               className="mt-10 inline-flex items-center gap-4 border border-accent/60 px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] transition-colors duration-500 hover:bg-accent hover:text-accent-foreground"
             >
-              Shop Altair
+              Shop at sarkar.store ↗
             </a>
           </Reveal>
         </div>
@@ -623,10 +623,10 @@ function FinalCta() {
         </Reveal>
         <Reveal delay={180}>
           <a
-            href="#offer"
+            href="https://www.sarkar.store" target="_blank" rel="noopener"
             className="mt-14 inline-flex items-center gap-4 border border-accent/60 px-12 py-5 text-[0.7rem] uppercase tracking-[0.4em] transition-colors duration-500 hover:bg-accent hover:text-accent-foreground"
           >
-            Shop Altair
+            Shop at sarkar.store ↗
           </a>
         </Reveal>
         <Reveal delay={280}>
