@@ -1,7 +1,7 @@
 export const SITE = "https://altair-midnight-aura.lovable.app";
 export const STORE = "https://www.sarkar.store";
 export const PUBLISHED = "2026-10-08";
-export const UPDATED = "2026-10-09";
+export const UPDATED = "2026-10-15";
 export const PRODUCT_IMAGE = `${SITE}/images/altair-product.webp`;
 
 // Official profiles, as linked from the footer of www.sarkar.store

@@ -74,7 +74,7 @@ function About() {
         </nav>
         <h1 className="mt-10 font-display text-5xl tracking-wide sm:text-6xl">About Sarkar</h1>
         <p className="mt-4 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-          Updated <time dateTime={UPDATED}>9 October 2026</time>
+          Updated <time dateTime={UPDATED}>15 October 2026</time>
         </p>
 
         <div className="mt-12 space-y-6 text-sm leading-relaxed text-muted-foreground">
