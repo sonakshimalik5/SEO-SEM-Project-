@@ -674,10 +674,12 @@ function Footer() {
           <a
             key={label}
             href={href}
-            rel="me noopener"
+            rel="me noopener noreferrer"
             target="_blank"
-            className="text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
+            aria-label={`Sarkar on ${label} (opens in a new tab)`}
+            className="inline-flex items-center gap-2 py-1 text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
           >
+            {label === "Instagram" && <InstagramIcon />}
             {label}
           </a>
         ))}
