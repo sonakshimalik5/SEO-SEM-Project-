@@ -79,11 +79,11 @@ export const Route = createFileRoute("/")({
           "For nights that smell like rain and feel like confidence. A nocturnal floral-woody parfum.",
       },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: `${SITE}/` },
       { rel: "preload", as: "image", href: heroImg, type: "image/webp", fetchPriority: "high" },
     ],
     scripts: [
@@ -510,10 +510,10 @@ function Offer() {
           </Reveal>
           <Reveal delay={440}>
             <a
-              href="#final"
+              href="https://www.sarkar.store" target="_blank" rel="noopener"
               className="mt-10 inline-flex items-center gap-4 border border-accent/60 px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] transition-colors duration-500 hover:bg-accent hover:text-accent-foreground"
             >
-              Shop Altair
+              Shop at sarkar.store ↗
             </a>
           </Reveal>
         </div>
@@ -566,7 +566,7 @@ function Faq() {
         <p className="mt-6 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
           By the <a href="/about" className="underline underline-offset-4 hover:text-foreground">Sarkar fragrance team</a>
           {" · "}Published <time dateTime={PUBLISHED}>8 October 2026</time>
-          {" · "}Updated <time dateTime={UPDATED}>8 October 2026</time>
+          {" · "}Updated <time dateTime={UPDATED}>15 October 2026</time>
         </p>
         <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           ALTAIR by Sarkar is a 100 ML nocturnal floral-woody parfum priced at ₹1,199, with notes
@@ -623,10 +623,10 @@ function FinalCta() {
         </Reveal>
         <Reveal delay={180}>
           <a
-            href="#offer"
+            href="https://www.sarkar.store" target="_blank" rel="noopener"
             className="mt-14 inline-flex items-center gap-4 border border-accent/60 px-12 py-5 text-[0.7rem] uppercase tracking-[0.4em] transition-colors duration-500 hover:bg-accent hover:text-accent-foreground"
           >
-            Shop Altair
+            Shop at sarkar.store ↗
           </a>
         </Reveal>
         <Reveal delay={280}>
@@ -674,10 +674,12 @@ function Footer() {
           <a
             key={label}
             href={href}
-            rel="me noopener"
+            rel="me noopener noreferrer"
             target="_blank"
-            className="text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
+            aria-label={`Sarkar on ${label} (opens in a new tab)`}
+            className="inline-flex items-center gap-2 py-1 text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
           >
+            {label === "Instagram" && <InstagramIcon />}
             {label}
           </a>
         ))}
@@ -687,5 +689,15 @@ function Footer() {
         © {new Date().getFullYear()} Sarkar · ALTAIR. All rights reserved.
       </p>
     </footer>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+    </svg>
   );
 }

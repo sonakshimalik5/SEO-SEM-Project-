@@ -74,24 +74,52 @@ function About() {
         </nav>
         <h1 className="mt-10 font-display text-5xl tracking-wide sm:text-6xl">About Sarkar</h1>
         <p className="mt-4 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-          Updated <time dateTime={UPDATED}>9 October 2026</time>
+          Updated <time dateTime={UPDATED}>15 October 2026</time>
         </p>
 
         <div className="mt-12 space-y-6 text-sm leading-relaxed text-muted-foreground">
-          <p>
-            Sarkar, also known as House of Sarkar, is an Indian fragrance brand. ALTAIR — a 100 ML
-            nocturnal floral-woody parfum priced at ₹1,199 — is one of its parfums, sold through
-            the official store at <a className={link} href={STORE}>www.sarkar.store</a>.
+          <p className="font-display text-2xl italic leading-snug text-foreground sm:text-3xl">
+            Anyone can raise their voice. Few can raise the standards.
           </p>
           <p>
-            Read the brand's own story on{" "}
+            Sarkar — also known as House of Sarkar — is a premium, unisex fragrance house from
+            India, built on what it calls everyday authority. Every Sarkar fragrance is a parfum
+            made at 25% oil concentration, meant for ordinary days and the people who make them
+            extraordinary. Sarkar is run by Brix Lifestyle Private Limited and sells directly
+            through its official store, <a className={link} href={STORE}>www.sarkar.store</a>.
+          </p>
+          <p>
+            Read the brand in its own words on{" "}
             <a className={link} href={`${STORE}/pages/know-sarkar`}>Know Sarkar</a>.
           </p>
 
-          <h2 className="pt-6 font-display text-3xl text-foreground">About ALTAIR</h2>
+          <h2 className="pt-6 font-display text-3xl text-foreground">The idea behind ALTAIR</h2>
           <p>
-            ALTAIR opens with cherry and mulberry, blooms into night jasmine and datura, and
-            settles on wood. See the full notes, key facts and questions on the{" "}
+            ALTAIR is Sarkar's after-dark fragrance. It was imagined around one moment: the hour
+            after rain, when the city is quiet, the stone is still wet and the night-blooming
+            flowers have opened. The tagline says it plainly —{" "}
+            <em>for nights that smell like rain and feel like confidence.</em>
+          </p>
+
+          <h2 className="pt-6 font-display text-3xl text-foreground">How it smells</h2>
+          <p>
+            In plain terms, ALTAIR is floral, fruity and woody. The first spray is dark fruit —
+            cherry and mulberry, juicy but not sugary. Within minutes the flowers take over: night
+            jasmine, creamy and cool, with datura adding a greener, more mysterious edge. Hours
+            later what stays on your skin is wood — warm, smooth and quiet.
+          </p>
+          <ul className="list-disc space-y-2 pl-5">
+            <li><strong className="font-normal text-foreground">Top:</strong> cherry, mulberry</li>
+            <li><strong className="font-normal text-foreground">Heart:</strong> night jasmine, datura</li>
+            <li><strong className="font-normal text-foreground">Base:</strong> wood</li>
+            <li><strong className="font-normal text-foreground">Size and price:</strong> 100 ML parfum, ₹1,199</li>
+          </ul>
+
+          <h2 className="pt-6 font-display text-3xl text-foreground">When to wear it</h2>
+          <p>
+            ALTAIR is made for the evening: dinners, date nights, late drives, and monsoon nights
+            when the air already smells of rain. Like every Sarkar fragrance, it is unisex. See all
+            the details and common questions on the{" "}
             <Link to="/" hash="faq" className={link}>ALTAIR page</Link>.
           </p>
 
@@ -110,7 +138,7 @@ function About() {
           <h2 className="pt-6 font-display text-3xl text-foreground">Official profiles</h2>
           <ul className="list-disc space-y-2 pl-5">
             {SOCIALS.map(([label, href]) => (
-              <li key={label}><a className={link} href={href} rel="me noopener" target="_blank">{label}</a></li>
+              <li key={label}><a className={link} href={href} rel="me noopener noreferrer" target="_blank">{label}</a></li>
             ))}
           </ul>
         </div>
@@ -121,6 +149,14 @@ function About() {
         >
           Discover ALTAIR
         </Link>
+        <a
+          href={STORE}
+          target="_blank"
+          rel="noopener"
+          className="ml-0 mt-4 inline-flex px-2 py-4 text-[0.7rem] uppercase tracking-[0.35em] text-muted-foreground hover:text-foreground sm:ml-6"
+        >
+          Visit sarkar.store ↗
+        </a>
       </article>
     </div>
   );

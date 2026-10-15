@@ -1,6 +1,6 @@
 # ALTAIR by Sarkar
 
-> ALTAIR is a 100 ML nocturnal floral-woody parfum by the Indian fragrance brand Sarkar (sarkar.store), priced at ₹1,199 (INR). Tagline: "For nights that smell like rain and feel like confidence."
+> ALTAIR is a 100 ML nocturnal floral-woody parfum by the Indian fragrance brand Sarkar (www.sarkar.store), priced at ₹1,199 (INR). Tagline: "For nights that smell like rain and feel like confidence."
 
 ## Key facts
 - Product: ALTAIR
@@ -39,10 +39,11 @@ Q: What is datura in perfume?
 A: A night-blooming trumpet flower; in ALTAIR it adds a green, hypnotic floral facet.
 
 Q: Where can I buy ALTAIR?
-A: From Sarkar's official store, sarkar.store.
+A: From Sarkar's official store, https://www.sarkar.store.
 
 ## Pages
 - [ALTAIR landing page](https://altair-midnight-aura.lovable.app/)
 - [Questions about ALTAIR](https://altair-midnight-aura.lovable.app/#faq)
-- [Sarkar store](https://sarkar.store)
+- [Sarkar store](https://www.sarkar.store)
 - [About Sarkar](https://altair-midnight-aura.lovable.app/about)
+- [Full reference](https://altair-midnight-aura.lovable.app/llms-full.txt)
