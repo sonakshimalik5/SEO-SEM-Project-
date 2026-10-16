@@ -123,6 +123,15 @@ function About() {
             <Link to="/" hash="faq" className={link}>ALTAIR page</Link>.
           </p>
 
+          <h2 className="pt-6 font-display text-3xl text-foreground">What Sarkar knows first-hand</h2>
+          <p>
+            Everything about ALTAIR on this site — its notes, concentration, size, price and the
+            occasions it was made for — comes directly from Sarkar, the brand that created it and
+            sells it. Sarkar has not published the names or qualifications of its perfumers, so we
+            don't list any here. General explanations of perfume terms are sourced from{" "}
+            <a className={link} href="https://en.wikipedia.org/wiki/Perfume" target="_blank" rel="noopener">Perfume (Wikipedia)</a>.
+          </p>
+
           <h2 id="contact" className="pt-6 font-display text-3xl text-foreground">Contact</h2>
           <p>
             Customer support: <a className={link} href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
