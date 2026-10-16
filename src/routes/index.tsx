@@ -23,43 +23,43 @@ const FACTS: [string, string][] = [
 const FAQS = [
   {
     q: "What is ALTAIR by Sarkar?",
-    a: "ALTAIR is a 100 ML nocturnal floral-woody parfum by the Indian fragrance brand Sarkar, priced at ₹1,199. Its tagline is “For nights that smell like rain and feel like confidence.”",
+    a: "ALTAIR is a 100 ML floral-woody parfum from the Indian fragrance brand Sarkar, made for your evenings and nights. It costs ₹1,199, and its tagline sums it up: “For nights that smell like rain and feel like confidence.”",
   },
   {
     q: "What does ALTAIR by Sarkar smell like?",
-    a: "ALTAIR smells like a rainy night: it opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened polished wood.",
+    a: "ALTAIR smells like a rainy night. When you first spray it, you get dark cherry and mulberry. Then night jasmine and datura open up, and over time it settles into warm, rain-darkened wood on your skin.",
   },
   {
     q: "What are the top, heart and base notes of ALTAIR?",
-    a: "ALTAIR's top notes are cherry and mulberry, its heart notes are night jasmine and datura, and its base note is wood.",
+    a: "ALTAIR's top notes are cherry and mulberry, its heart notes are night jasmine and datura, and its base note is wood. The fruit is what you notice first, and the wood is what stays longest.",
   },
   {
     q: "How much does ALTAIR perfume cost?",
-    a: "ALTAIR by Sarkar costs ₹1,199 for a 100 ML bottle of parfum.",
+    a: "ALTAIR by Sarkar costs ₹1,199 for a 100 ML bottle of parfum, and you can buy it on sarkar.store.",
   },
   {
     q: "What fragrance family is ALTAIR?",
-    a: "ALTAIR belongs to the floral-fruity-woody family, with a night-time character built around white night-blooming flowers.",
+    a: "ALTAIR is a floral, fruity and woody fragrance. If you like white flowers with a darker, night-time mood, it's made for you.",
   },
   {
     q: "When is the best time to wear ALTAIR?",
-    a: "ALTAIR is best worn in the evening and at night — for date nights, parties and rainy monsoon evenings.",
+    a: "ALTAIR is best worn in the evening and at night. Reach for it on date nights, at parties, or on a rainy monsoon evening.",
   },
   {
     q: "Is ALTAIR a good perfume for monsoon or rainy weather?",
-    a: "Yes. ALTAIR was created around the smell of rain at night, so its jasmine, dark berries and wet-wood accord suit the Indian monsoon season.",
+    a: "Yes. ALTAIR was built around the smell of rain at night, so its jasmine, dark berries and wet wood feel right at home during the Indian monsoon.",
   },
   {
     q: "Is ALTAIR unisex?",
-    a: "Yes. ALTAIR's balance of dark fruit, white florals and wood suits anyone who likes a confident, night-time scent.",
+    a: "Yes. Like every Sarkar fragrance, ALTAIR is unisex. If you enjoy a confident night-time scent with dark fruit, white flowers and wood, you can wear it.",
   },
   {
     q: "What is datura in perfume?",
-    a: "Datura is a trumpet-shaped flower that blooms at night. In ALTAIR it adds a green, hypnotic, slightly dark floral facet alongside night jasmine.",
+    a: "Datura is a trumpet-shaped flower that blooms at night. In ALTAIR it gives the night jasmine a greener, slightly darker and more mysterious edge.",
   },
   {
     q: "Where can I buy ALTAIR by Sarkar?",
-    a: "ALTAIR is sold by Sarkar through its official online store at www.sarkar.store.",
+    a: "You can buy ALTAIR from Sarkar's official online store, www.sarkar.store.",
   },
 ];
 
@@ -189,19 +189,19 @@ const JOURNEY = [
     step: "01",
     title: "ARRIVAL",
     notes: "Cherry · Mulberry",
-    text: "The first minute. Wet fruit, glossy and dark.",
+    text: "The first minute after you spray. Wet fruit, glossy and dark.",
   },
   {
     step: "02",
     title: "BLOOM",
     notes: "Night Jasmine · Datura",
-    text: "The hour it belongs to. Petals open in the dark.",
+    text: "As it warms on your skin, night jasmine and datura open in the dark.",
   },
   {
     step: "03",
     title: "LINGER",
     notes: "Wood",
-    text: "What remains at 3 a.m. Warm, quiet, unmistakable.",
+    text: "What stays with you late into the night. Warm, quiet wood.",
   },
 ];
 
@@ -504,8 +504,9 @@ function Offer() {
           </Reveal>
           <Reveal delay={360}>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Night jasmine and datura over dark cherry and mulberry, resolved on rain-darkened
-              wood. Built for the hours after midnight.
+              ALTAIR opens with dark cherry and mulberry, blooms into night jasmine and datura,
+              and settles on rain-darkened wood. It's the bottle you reach for when your evening
+              is just getting started.
             </p>
           </Reveal>
           <Reveal delay={440}>
@@ -569,9 +570,10 @@ function Faq() {
           {" · "}Updated <time dateTime={UPDATED}>15 October 2026</time>
         </p>
         <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          ALTAIR by Sarkar is a 100 ML nocturnal floral-woody parfum priced at ₹1,199, with notes
-          of cherry, mulberry, night jasmine, datura and wood. All details on this page come
-          directly from Sarkar, the brand that created and sells ALTAIR at{" "}
+          Here's the short version: ALTAIR by Sarkar is a 100 ML floral-woody parfum for your
+          evenings, priced at ₹1,199, with notes of cherry, mulberry, night jasmine, datura and
+          wood. Below you'll find quick answers to the questions people ask most. Every detail
+          comes directly from Sarkar, the brand that created ALTAIR and sells it at{" "}
           <a href="https://www.sarkar.store" className="underline underline-offset-4 hover:text-foreground">sarkar.store</a>.
         </p>
         <Reveal delay={150}>
