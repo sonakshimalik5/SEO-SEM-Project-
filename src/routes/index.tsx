@@ -189,19 +189,19 @@ const JOURNEY = [
     step: "01",
     title: "ARRIVAL",
     notes: "Cherry · Mulberry",
-    text: "The first minute after you spray. Wet fruit, glossy and dark.",
+        text: "The first minute after you spray. Wet fruit, glossy and dark.",
   },
   {
     step: "02",
     title: "BLOOM",
     notes: "Night Jasmine · Datura",
-    text: "As it warms on your skin, night jasmine and datura open in the dark.",
+        text: "As it warms on your skin, night jasmine and datura open in the dark.",
   },
   {
     step: "03",
     title: "LINGER",
     notes: "Wood",
-    text: "What stays with you late into the night. Warm, quiet wood.",
+        text: "As it warms on your skin, night jasmine and datura open in the dark.",
   },
 ];
 
@@ -268,7 +268,7 @@ function Hero() {
         width={1280}
         height={1600}
         loading="eager"
-        decoding="sync"
+        decoding="async"
         fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
       />
@@ -504,9 +504,9 @@ function Offer() {
           </Reveal>
           <Reveal delay={360}>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              ALTAIR opens with dark cherry and mulberry, blooms into night jasmine and datura,
-              and settles on rain-darkened wood. It's the bottle you reach for when your evening
-              is just getting started.
+
+          ALTAIR opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened wood. It's the bottle you reach for when your evening is just getting started.
+
             </p>
           </Reveal>
           <Reveal delay={440}>
