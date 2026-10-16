@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { ORG_SCHEMA, ORG_ID, SITE, PUBLISHED, UPDATED, PRODUCT_IMAGE, SOCIALS } from "@/lib/brand";
+import { ORG_SCHEMA, ORG_ID, SITE, PUBLISHED, UPDATED, PRODUCT_IMAGE, SOCIALS, POLICIES, SUPPORT_EMAIL } from "@/lib/brand";
 import heroImg from "@/assets/altair-hero.webp";
 import productImg from "@/assets/altair-product.webp";
 import campaignImg from "@/assets/altair-campaign.webp";
@@ -602,6 +602,19 @@ function Faq() {
             </details>
           ))}
         </div>
+        <aside aria-labelledby="sources" className="mt-14 text-xs leading-relaxed text-muted-foreground">
+          <h3 id="sources" className="text-[0.65rem] uppercase tracking-[0.4em] text-accent">Sources</h3>
+          <p className="mt-4 max-w-2xl">
+            Product facts (notes, size, price, concentration) are first-party information from
+            Sarkar, as published on{" "}
+            <a href="https://www.sarkar.store/pages/know-sarkar" className="underline underline-offset-4 hover:text-foreground">Know Sarkar</a>{" "}
+            and <a href="https://www.sarkar.store" className="underline underline-offset-4 hover:text-foreground">sarkar.store</a>.
+            General background on what "parfum" and fragrance notes mean, according to{" "}
+            <a href="https://en.wikipedia.org/wiki/Perfume" className="underline underline-offset-4 hover:text-foreground" rel="noopener" target="_blank">Perfume (Wikipedia)</a>{" "}
+            and <a href="https://en.wikipedia.org/wiki/Datura" className="underline underline-offset-4 hover:text-foreground" rel="noopener" target="_blank">Datura (Wikipedia)</a>.
+          </p>
+          <p className="mt-3">Questions about this page: <a href="mailto:support@sarkar.store" className="underline underline-offset-4 hover:text-foreground">support@sarkar.store</a></p>
+        </aside>
       </div>
     </section>
   );
@@ -632,6 +645,16 @@ function FinalCta() {
         <Reveal delay={280}>
           <p className="mt-8 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
             100 ML Parfum · ₹1,199
+          </p>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Before you buy:{" "}
+            {POLICIES.slice(0, 3).map(([label, href], i) => (
+              <span key={label}>
+                {i > 0 && " · "}
+                <a href={href} className="underline underline-offset-4 hover:text-foreground">{label}</a>
+              </span>
+            ))}
+            {" · "}Questions? <a href={`mailto:${SUPPORT_EMAIL}`} className="underline underline-offset-4 hover:text-foreground">{SUPPORT_EMAIL}</a>
           </p>
         </Reveal>
       </div>
@@ -683,6 +706,21 @@ function Footer() {
             {label}
           </a>
         ))}
+      </div>
+      <div className="mx-auto mt-10 grid max-w-7xl gap-8 text-sm text-muted-foreground sm:grid-cols-2">
+        <address className="not-italic">
+          <p className="text-[0.6rem] uppercase tracking-[0.3em] text-accent">Customer support</p>
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="mt-3 inline-block underline underline-offset-4 hover:text-foreground">{SUPPORT_EMAIL}</a>
+          <p className="mt-2 text-xs">Sarkar is run by Brix Lifestyle Private Limited, India.</p>
+        </address>
+        <nav aria-label="Store policies">
+          <p className="text-[0.6rem] uppercase tracking-[0.3em] text-accent">Policies</p>
+          <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-xs">
+            {POLICIES.map(([label, href]) => (
+              <li key={label}><a href={href} className="underline underline-offset-4 hover:text-foreground">{label}</a></li>
+            ))}
+          </ul>
+        </nav>
       </div>
       <div className="hairline my-10" />
       <p className="mx-auto max-w-7xl text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground">
