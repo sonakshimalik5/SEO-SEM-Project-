@@ -1,0 +1,75 @@
+# ALTAIR by Sarkar — full reference
+
+> ALTAIR is a 100 ML nocturnal floral-woody parfum by Sarkar (House of Sarkar), an Indian fragrance brand. Price: ₹1,199 (INR). Sold at https://www.sarkar.store. Tagline: "For nights that smell like rain and feel like confidence."
+
+This file is supplementary documentation of the public pages below. It mirrors the visible content of those pages.
+
+## Brand
+- Name: Sarkar (also "House of Sarkar")
+- Country: India
+- Official store: https://www.sarkar.store
+- Brand story: https://www.sarkar.store/pages/know-sarkar
+- Customer support: support@sarkar.store
+- Instagram: https://www.instagram.com/houseofsarkar
+- YouTube: https://www.youtube.com/@houseofsarkar
+- X: https://x.com/houseofsarkar
+- LinkedIn: https://www.linkedin.com/company/houseofsarkar
+- Facebook: https://www.facebook.com/people/Houseofsarkar/61586511428837/
+
+## Product: ALTAIR
+- Type: Parfum
+- Size: 100 ML
+- Price: ₹1,199 (INR)
+- Fragrance family: Floral · Fruity · Woody
+- Top notes: Cherry, Mulberry
+- Heart notes: Night Jasmine, Datura
+- Base notes: Wood
+- Character: nocturnal; built around the smell of a rainy night
+- Suggested wear: evenings and nights, date nights, parties, monsoon evenings
+- Gender: unisex
+
+### Scent journey
+1. Arrival — cherry and mulberry: wet, glossy dark fruit.
+2. Bloom — night jasmine and datura: white, night-blooming florals.
+3. Linger — wood: warm, rain-darkened polished wood.
+
+### Notes explained
+- Night Jasmine: cool, narcotic white petals carrying the smell of wet air.
+- Datura: a trumpet flower that blooms at night — green and hypnotic.
+- Cherry: dark cherry flesh with a bitter-stone edge, not candy-sweet.
+- Mulberry: inky crushed-berry juice that deepens the sweetness.
+- Wood: rain-darkened polished wood; the part that stays longest.
+
+## Questions and answers
+Q: What is ALTAIR by Sarkar?
+A: A 100 ML nocturnal floral-woody parfum by Sarkar, priced at ₹1,199.
+
+Q: What does ALTAIR smell like?
+A: It opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened wood.
+
+Q: What are the notes of ALTAIR?
+A: Top: cherry, mulberry. Heart: night jasmine, datura. Base: wood.
+
+Q: How much does ALTAIR cost?
+A: ₹1,199 for 100 ML of parfum.
+
+Q: When should I wear ALTAIR?
+A: Evenings and nights — date nights, parties and rainy monsoon evenings.
+
+Q: Is ALTAIR unisex?
+A: Yes.
+
+Q: Where can I buy ALTAIR?
+A: From Sarkar's official store, https://www.sarkar.store.
+
+## Policies (on www.sarkar.store)
+- Shipping: https://www.sarkar.store/pages/shipping-policy
+- Refunds: https://www.sarkar.store/pages/refund-policy
+- Cancellations: https://www.sarkar.store/pages/cancellation-policy
+- Privacy: https://www.sarkar.store/pages/privacy-policy
+- Terms: https://www.sarkar.store/pages/terms-conditions
+
+## Pages
+- ALTAIR: https://altair-midnight-aura.lovable.app/
+- About Sarkar: https://altair-midnight-aura.lovable.app/about
+- Short summary: https://altair-midnight-aura.lovable.app/llms.txt

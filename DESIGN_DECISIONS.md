@@ -38,5 +38,8 @@ Scoring is out of 10. Any concept below 9 in any category was removed before the
 
 - The hero is the only eagerly loaded image and is preloaded with high priority.
 - All below-the-fold editorial images retain `loading="lazy"`, explicit width and height, and WebP sources to reduce transfer cost and layout shift.
-- Fonts are self-hosted, use `font-display: swap`, and only the two typefaces needed by the storefront are defined and preloaded.
+
+- Fonts are self-hosted, use `font-display: swap`, and only the two fonts used at initial render are preloaded.
+- The site contains no third-party trackers, remote font requests, video, canvas, or carousel JavaScript.
+
 - The site contains no third-party trackers, remote font requests, video, canvas, or carousel JavaScript.
