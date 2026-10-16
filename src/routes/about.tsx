@@ -82,10 +82,10 @@ function About() {
             Anyone can raise their voice. Few can raise the standards.
           </p>
           <p>
-            Sarkar — also known as House of Sarkar — is a premium, unisex fragrance house from
-            India, built on what it calls everyday authority. Every Sarkar fragrance is a parfum
-            made at 25% oil concentration, meant for ordinary days and the people who make them
-            extraordinary. Sarkar is run by Brix Lifestyle Private Limited and sells directly
+            Sarkar, also known as House of Sarkar, is an Indian fragrance house that makes
+            unisex parfums. The brand's idea is what it calls everyday authority: scents you can
+            wear on an ordinary day and still feel in charge. Every Sarkar fragrance is a parfum
+            made at 25% oil concentration. Sarkar is run by Brix Lifestyle Private Limited and sells directly
             through its official store, <a className={link} href={STORE}>www.sarkar.store</a>.
           </p>
           <p>
@@ -117,7 +117,7 @@ function About() {
 
           <h2 className="pt-6 font-display text-3xl text-foreground">When to wear it</h2>
           <p>
-            ALTAIR is made for the evening: dinners, date nights, late drives, and monsoon nights
+            ALTAIR is made for your evenings: dinners, date nights, late drives, and monsoon nights
             when the air already smells of rain. Like every Sarkar fragrance, it is unisex. See all
             the details and common questions on the{" "}
             <Link to="/" hash="faq" className={link}>ALTAIR page</Link>.
