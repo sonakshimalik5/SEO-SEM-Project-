@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep reusable academic disclosure, evidence-labelled FAQs, and schema relationships in browser-safe shared data modules so visible answers and JSON-LD stay consistent.
+- Model the unverified ALTAIR product concept as CreativeWork, not a retail Product or Offer; only add commercial schemas when product-specific evidence and eligibility exist.
