@@ -1,75 +1,35 @@
-# ALTAIR by Sarkar — full reference
+# ALTAIR academic project — full reference
 
-> ALTAIR is a 100 ML nocturnal floral-woody parfum by Sarkar (House of Sarkar), an Indian fragrance brand. Price: ₹1,199 (INR). Sold at https://www.sarkar.store. Tagline: "For nights that smell like rain and feel like confidence."
+This supplementary file mirrors the public project's evidence policy. This website is an independent academic project, not Sarkar's official website, and is not affiliated with or endorsed by the brand. No transactions occur here. No student author name or qualifications have been supplied. No original publication date is asserted.
 
-This file is supplementary documentation of the public pages below. It mirrors the visible content of those pages.
+## Supplied concept specifications, not verified retail facts
+ALTAIR: 100 ML parfum; ₹1,199 INR. Floral, fruity, woody, night profile. Top notes cherry and mulberry; heart notes night jasmine and datura; base note wood. Tagline: "For nights that smell like rain and feel like confidence."
+The imagery and scent narrative are creative project material, not proof of official ALTAIR packaging or a report of personal testing.
+The supplied 25% concentration, approximately 6–7-hour longevity on clothing, cruelty-free and Made in India positioning have not been established through ALTAIR-specific evidence. An official ALTAIR listing and the ALTAIR10 coupon have not been verified. No transactional Offer, Product rating, invented identifier, certification or review dataset is asserted.
 
-## Brand
-- Name: Sarkar (also "House of Sarkar")
-- Country: India
-- Official store: https://www.sarkar.store
-- Brand story: https://www.sarkar.store/pages/know-sarkar
-- Customer support: support@sarkar.store
-- Instagram: https://www.instagram.com/houseofsarkar
-- YouTube: https://www.youtube.com/@houseofsarkar
-- X: https://x.com/houseofsarkar
-- LinkedIn: https://www.linkedin.com/company/houseofsarkar
-- Facebook: https://www.facebook.com/people/Houseofsarkar/61586511428837/
+## Official brand context
+Sarkar (House of Sarkar) is a fragrance brand with its official website at https://www.sarkar.store.
+Brand story: https://www.sarkar.store/pages/know-sarkar
+Collection: https://www.sarkar.store/collections/shop-all
+Official Instagram: https://www.instagram.com/houseofsarkar/?hl=en
+Official brand support: support@sarkar.store — not support for this academic project.
+Sarkar identifies Bhuvan Bam and Neel Gogia among its co-founders. Neel Gogia is a co-founder of IPLIX Media. They are not described here as perfumers or fragrance reviewers. External launch coverage also names Rohit Raj and Jag Chima.
+Editorial reference: https://india.entrepreneur.com/business-news/bhuvan-bam-launches-premium-fragrance-brand
+The official Know Sarkar page makes a brand-level 25% oil concentration claim. This does not independently verify ALTAIR.
 
-## Product: ALTAIR
-- Type: Parfum
-- Size: 100 ML
-- Price: ₹1,199 (INR)
-- Fragrance family: Floral · Fruity · Woody
-- Top notes: Cherry, Mulberry
-- Heart notes: Night Jasmine, Datura
-- Base notes: Wood
-- Character: nocturnal; built around the smell of a rainy night
-- Suggested wear: evenings and nights, date nights, parties, monsoon evenings
-- Gender: unisex
+## Community and social references
+Reddit: https://www.reddit.com/r/DesiFragranceAddicts/comments/1vmfg0k/sarkar_perfume_by_bhuvan_bam_fragrantix_video/
+Full thread access was blocked. No detailed content description or verified purchase status is asserted. It is not an official brand profile or a rating dataset.
+Instagram Reel: https://www.instagram.com/reels/Db09y6Ry9-4/
+Accessible page metadata identified a Tarique Fragrance post about Sarkar perfumes. The video and detailed claims were not independently inspected. It is not treated as a verified customer review or official profile.
 
-### Scent journey
-1. Arrival — cherry and mulberry: wet, glossy dark fruit.
-2. Bloom — night jasmine and datura: white, night-blooming florals.
-3. Linger — wood: warm, rain-darkened polished wood.
+## General educational references
+Perfume concentration and storage context: https://en.wikipedia.org/wiki/Perfume
+IFRA standards: https://ifrafragrance.org/safe-use/understanding-the-standards
+Parfum is a concentration category; it does not by itself establish exact concentration or guaranteed longevity. Performance varies with formulation, application and conditions. Follow product label instructions and warnings; keep perfume closed and away from heat and direct light. IFRA publishes ingredient-use standards, rather than certifying finished perfumes. No ALTAIR conformity document has been verified.
+A brand statement establishes what the brand says; it is not independent testing. Third-party commentary is not automatically a verified customer review.
 
-### Notes explained
-- Night Jasmine: cool, narcotic white petals carrying the smell of wet air.
-- Datura: a trumpet flower that blooms at night — green and hypnotic.
-- Cherry: dark cherry flesh with a bitter-stone edge, not candy-sweet.
-- Mulberry: inky crushed-berry juice that deepens the sweetness.
-- Wood: rain-darkened polished wood; the part that stays longest.
-
-## Questions and answers
-Q: What is ALTAIR by Sarkar?
-A: A 100 ML nocturnal floral-woody parfum by Sarkar, priced at ₹1,199.
-
-Q: What does ALTAIR smell like?
-A: It opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened wood.
-
-Q: What are the notes of ALTAIR?
-A: Top: cherry, mulberry. Heart: night jasmine, datura. Base: wood.
-
-Q: How much does ALTAIR cost?
-A: ₹1,199 for 100 ML of parfum.
-
-Q: When should I wear ALTAIR?
-A: Evenings and nights — date nights, parties and rainy monsoon evenings.
-
-Q: Is ALTAIR unisex?
-A: Yes.
-
-Q: Where can I buy ALTAIR?
-A: From Sarkar's official store, https://www.sarkar.store.
-
-## Policies (on www.sarkar.store)
-- Shipping: https://www.sarkar.store/pages/shipping-policy
-- Refunds: https://www.sarkar.store/pages/refund-policy
-- Cancellations: https://www.sarkar.store/pages/cancellation-policy
-- Privacy: https://www.sarkar.store/pages/privacy-policy
-- Terms: https://www.sarkar.store/pages/terms-conditions
-
-## Pages
-- ALTAIR: https://altair-midnight-aura.lovable.app/
-- About Sarkar: https://altair-midnight-aura.lovable.app/about
-- Short summary: https://altair-midnight-aura.lovable.app/llms.txt
+## Project pages
+https://altair-midnight-aura.lovable.app/
+https://altair-midnight-aura.lovable.app/about
+https://altair-midnight-aura.lovable.app/mentions
