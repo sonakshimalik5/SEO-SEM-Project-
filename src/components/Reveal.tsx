@@ -12,11 +12,13 @@ export function Reveal({
   as?: "div" | "section" | "li" | "span" | "p";
 }) {
   const ref = useRef<HTMLElement | null>(null);
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (el.getBoundingClientRect().top > window.innerHeight) setShown(false);
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {

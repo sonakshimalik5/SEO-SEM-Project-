@@ -78,9 +78,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ALTAIR — Sarkar Parfum" },
-      { name: "description", content: "ALTAIR by Sarkar. A nocturnal floral-woody parfum." },
-      { name: "author", content: "Sarkar" },
       { name: "theme-color", content: "#11152a" },
       { name: "color-scheme", content: "dark" },
       { property: "og:type", content: "website" },
