@@ -1,4 +1,16 @@
-import { describe, expect, test } from "bun:test";
+import { describe, test } from "node:test";
+import assert from "node:assert/strict";
+
+function expect<T>(actual: T) {
+  return {
+    toBe: (expected: unknown) => assert.equal(actual, expected),
+    toContain: (expected: string) => assert.ok(String(actual).includes(expected)),
+    not: {
+      toBe: (expected: unknown) => assert.notEqual(actual, expected),
+      toContain: (expected: string) => assert.ok(!String(actual).includes(expected)),
+    },
+  };
+}
 import { HOME_SCHEMA, FAQS, FACTS } from "./project-content";
 import { DISCLOSURE, SOCIALS, SITE, OFFICIAL_STORE } from "./brand";
 
