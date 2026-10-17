@@ -166,6 +166,7 @@ function Hero() {
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-6 pb-20 pt-32 lg:px-10 lg:pb-28">
         <p className="intro eyebrow">Sarkar · Academic fragrance concept</p>
+        <p className="intro mt-4 max-w-xl text-xs leading-relaxed text-muted-foreground">Independent college project. Not Sarkar's official website; not affiliated with or endorsed by the brand.</p>
         <h1
           className="intro mt-6 font-display text-[19vw] leading-[0.85] tracking-[0.06em] text-metal sm:text-[13vw] lg:text-[10.5vw]"
           style={{ animationDelay: "120ms" }}
