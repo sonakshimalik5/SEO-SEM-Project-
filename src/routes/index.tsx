@@ -1,84 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { ORG_SCHEMA, ORG_ID, SITE, PUBLISHED, UPDATED, PRODUCT_IMAGE, SOCIALS, POLICIES, SUPPORT_EMAIL } from "@/lib/brand";
+import { SITE, UPDATED, SOCIALS, POLICIES, SUPPORT_EMAIL, DISCLOSURE, OFFICIAL_STORE } from "@/lib/brand";
+import { FACTS, FAQS, HOME_SCHEMA } from "@/lib/project-content";
 import heroImg from "@/assets/altair-hero.webp";
 import productImg from "@/assets/altair-product.webp";
 import campaignImg from "@/assets/altair-campaign.webp";
 import notesImg from "@/assets/altair-notes.webp";
 
-const FACTS: [string, string][] = [
-  ["Product", "ALTAIR"],
-  ["Brand", "Sarkar (sarkar.store)"],
-  ["Type", "Parfum"],
-  ["Size", "100 ML"],
-  ["Price", "₹1,199 (INR)"],
-  ["Fragrance family", "Floral · Fruity · Woody"],
-  ["Top notes", "Cherry, Mulberry"],
-  ["Heart notes", "Night Jasmine, Datura"],
-  ["Base notes", "Wood"],
-  ["Best for", "Evenings, nights, date nights, monsoon and rainy weather"],
-  ["Gender", "Unisex"],
-];
-
-const FAQS = [
-  {
-    q: "What is ALTAIR by Sarkar?",
-    a: "ALTAIR is a 100 ML floral-woody parfum from the Indian fragrance brand Sarkar, made for your evenings and nights. It costs ₹1,199, and its tagline sums it up: “For nights that smell like rain and feel like confidence.”",
-  },
-  {
-    q: "What does ALTAIR by Sarkar smell like?",
-    a: "ALTAIR smells like a rainy night. When you first spray it, you get dark cherry and mulberry. Then night jasmine and datura open up, and over time it settles into warm, rain-darkened wood on your skin.",
-  },
-  {
-    q: "What are the top, heart and base notes of ALTAIR?",
-    a: "ALTAIR's top notes are cherry and mulberry, its heart notes are night jasmine and datura, and its base note is wood. The fruit is what you notice first, and the wood is what stays longest.",
-  },
-  {
-    q: "How much does ALTAIR perfume cost?",
-    a: "ALTAIR by Sarkar costs ₹1,199 for a 100 ML bottle of parfum, and you can buy it on sarkar.store.",
-  },
-  {
-    q: "What fragrance family is ALTAIR?",
-    a: "ALTAIR is a floral, fruity and woody fragrance. If you like white flowers with a darker, night-time mood, it's made for you.",
-  },
-  {
-    q: "When is the best time to wear ALTAIR?",
-    a: "ALTAIR is best worn in the evening and at night. Reach for it on date nights, at parties, or on a rainy monsoon evening.",
-  },
-  {
-    q: "Is ALTAIR a good perfume for monsoon or rainy weather?",
-    a: "Yes. ALTAIR was built around the smell of rain at night, so its jasmine, dark berries and wet wood feel right at home during the Indian monsoon.",
-  },
-  {
-    q: "Is ALTAIR unisex?",
-    a: "Yes. Like every Sarkar fragrance, ALTAIR is unisex. If you enjoy a confident night-time scent with dark fruit, white flowers and wood, you can wear it.",
-  },
-  {
-    q: "What is datura in perfume?",
-    a: "Datura is a trumpet-shaped flower that blooms at night. In ALTAIR it gives the night jasmine a greener, slightly darker and more mysterious edge.",
-  },
-  {
-    q: "Where can I buy ALTAIR by Sarkar?",
-    a: "You can buy ALTAIR from Sarkar's official online store, www.sarkar.store.",
-  },
-];
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ALTAIR by Sarkar — Nocturnal Floral-Woody Parfum, ₹1,199" },
+      { title: "ALTAIR by Sarkar — Independent Academic Fragrance Project" },
       {
         name: "description",
         content:
-          "ALTAIR by Sarkar: night jasmine, datura, cherry, mulberry and wood. A nocturnal floral-woody parfum. 100 ML, ₹1,199.",
+          "Independent college project exploring ALTAIR by Sarkar: fragrance concept, supplied specifications, source-backed FAQs and official brand references.",
       },
-      { property: "og:title", content: "ALTAIR by Sarkar — Nocturnal Parfum" },
+      { property: "og:title", content: "ALTAIR by Sarkar — Academic Fragrance Project" },
       {
         property: "og:description",
         content:
-          "For nights that smell like rain and feel like confidence. A nocturnal floral-woody parfum.",
+          "An independent academic fragrance concept with transparent sources and no affiliation with Sarkar.",
       },
-      { property: "og:type", content: "product" },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -89,67 +33,7 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            ORG_SCHEMA,
-            {
-              "@type": "WebSite",
-              "@id": `${SITE}/#website`,
-              url: `${SITE}/`,
-              name: "ALTAIR by Sarkar",
-              inLanguage: "en-IN",
-              publisher: { "@id": ORG_ID },
-            },
-            {
-              "@type": "WebPage",
-              "@id": `${SITE}/#webpage`,
-              url: `${SITE}/`,
-              name: "ALTAIR by Sarkar — Nocturnal Floral-Woody Parfum",
-              isPartOf: { "@id": `${SITE}/#website` },
-              about: { "@id": `${SITE}/#product` },
-              author: { "@id": ORG_ID },
-              publisher: { "@id": ORG_ID },
-              datePublished: PUBLISHED,
-              dateModified: UPDATED,
-              inLanguage: "en-IN",
-            },
-            {
-              "@type": "Product",
-              image: [PRODUCT_IMAGE],
-              "@id": `${SITE}/#product`,
-              name: "ALTAIR",
-              brand: { "@id": ORG_ID },
-              category: "Parfum",
-              url: "https://altair-midnight-aura.lovable.app/",
-              description:
-                "ALTAIR by Sarkar is a nocturnal floral-woody parfum with night jasmine, datura, cherry, mulberry and wood. 100 ML parfum, ₹1,199.",
-              size: "100 ML",
-              additionalProperty: [
-                { "@type": "PropertyValue", name: "Top notes", value: "Cherry, Mulberry" },
-                { "@type": "PropertyValue", name: "Heart notes", value: "Night Jasmine, Datura" },
-                { "@type": "PropertyValue", name: "Base notes", value: "Wood" },
-                { "@type": "PropertyValue", name: "Fragrance family", value: "Floral, Fruity, Woody" },
-                { "@type": "PropertyValue", name: "Concentration", value: "Parfum" },
-              ],
-              offers: {
-                "@type": "Offer",
-                price: "1199",
-                priceCurrency: "INR",
-                availability: "https://schema.org/InStock",
-                seller: { "@id": ORG_ID },
-              },
-            },
-            {
-              "@type": "FAQPage",
-              mainEntity: FAQS.map((f) => ({
-                "@type": "Question",
-                name: f.q,
-                acceptedAnswer: { "@type": "Answer", text: f.a },
-              })),
-            },
-          ],
-        }),
+        children: JSON.stringify(HOME_SCHEMA),
       },
     ],
   }),
@@ -165,7 +49,7 @@ const NOTES = [
   {
     name: "Datura",
     kind: "Floral shadow",
-    text: "The trumpet flower that blooms only at night — green, hypnotic, faintly dangerous.",
+    text: "A trumpet-flower accord imagined as green and mysterious in this concept.",
   },
   {
     name: "Cherry",
@@ -201,7 +85,7 @@ const JOURNEY = [
     step: "03",
     title: "LINGER",
     notes: "Wood",
-        text: "As it warms on your skin, night jasmine and datura open in the dark.",
+        text: "The concept finishes with a warm, rain-darkened woody impression.",
   },
 ];
 
@@ -237,6 +121,7 @@ function Nav() {
             ["Notes", "#notes"],
             ["Journey", "#journey"],
             ["About", "/about"],
+            ["Mentions", "/mentions"],
             ["Contact", "/about#contact"],
           ].map(([label, href]) => (
             <a
@@ -249,10 +134,10 @@ function Nav() {
           ))}
         </div>
         <a
-          href="#offer"
+          href={OFFICIAL_STORE}
           className="border border-border px-4 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-foreground transition-colors hover:border-accent hover:text-accent"
         >
-          Shop
+          Official store
         </a>
       </nav>
     </header>
@@ -280,7 +165,7 @@ function Hero() {
       />
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-6 pb-20 pt-32 lg:px-10 lg:pb-28">
-        <p className="intro eyebrow">Sarkar · New Release</p>
+        <p className="intro eyebrow">Sarkar · Academic fragrance concept</p>
         <h1
           className="intro mt-6 font-display text-[19vw] leading-[0.85] tracking-[0.06em] text-metal sm:text-[13vw] lg:text-[10.5vw]"
           style={{ animationDelay: "120ms" }}
@@ -389,7 +274,7 @@ function Notes() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <figcaption className="mt-4 text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground">
-                Raw materials · after rain
+                Concept imagery · after rain
               </figcaption>
             </figure>
           </Reveal>
@@ -501,20 +386,21 @@ function Offer() {
           </Reveal>
           <Reveal delay={300}>
             <p className="font-display text-4xl text-foreground">₹1,199</p>
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Supplied concept price · 100 ML. Not a verified retail offer; an official ALTAIR listing has not been confirmed.</p>
           </Reveal>
           <Reveal delay={360}>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
 
-          ALTAIR opens with dark cherry and mulberry, blooms into night jasmine and datura, and settles on rain-darkened wood. It's the bottle you reach for when your evening is just getting started.
+          The ALTAIR project brief imagines dark cherry and mulberry, night jasmine and datura, and rain-darkened wood. This is a creative scent description, not an independent wear test.
 
             </p>
           </Reveal>
           <Reveal delay={440}>
             <a
-              href="https://www.sarkar.store" target="_blank" rel="noopener"
+              href={OFFICIAL_STORE} target="_blank" rel="noopener"
               className="mt-10 inline-flex items-center gap-4 border border-accent/60 px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] transition-colors duration-500 hover:bg-accent hover:text-accent-foreground"
             >
-              Shop at sarkar.store ↗
+              Visit official Sarkar store ↗
             </a>
           </Reveal>
         </div>
@@ -539,7 +425,7 @@ function Campaign() {
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-7xl px-6 pb-14 lg:px-10 lg:pb-20">
             <Reveal>
-              <p className="eyebrow">Campaign · Monsoon nights</p>
+              <p className="eyebrow">Academic concept · Monsoon nights</p>
             </Reveal>
             <Reveal delay={120}>
               <p className="mt-5 max-w-2xl font-display text-3xl italic leading-snug sm:text-4xl lg:text-5xl">
@@ -565,16 +451,13 @@ function Faq() {
           <h2 className="mt-6 font-display text-3xl tracking-wide sm:text-5xl">About ALTAIR</h2>
         </Reveal>
         <p className="mt-6 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-          By the <a href="/about" className="underline underline-offset-4 hover:text-foreground">Sarkar fragrance team</a>
-          {" · "}Published <time dateTime={PUBLISHED}>8 October 2026</time>
-          {" · "}Updated <time dateTime={UPDATED}>15 October 2026</time>
+          Independent academic project
+          {" · "}Updated <time dateTime={UPDATED}>17 October 2026</time>
         </p>
         <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Here's the short version: ALTAIR by Sarkar is a 100 ML floral-woody parfum for your
-          evenings, priced at ₹1,199, with notes of cherry, mulberry, night jasmine, datura and
-          wood. Below you'll find quick answers to the questions people ask most. Every detail
-          comes directly from Sarkar, the brand that created ALTAIR and sells it at{" "}
-          <a href="https://www.sarkar.store" className="underline underline-offset-4 hover:text-foreground">sarkar.store</a>.
+          ALTAIR by Sarkar is presented here as a 100 ML parfum concept with cherry, mulberry,
+          night jasmine, datura and wood. The ₹1,199 price and notes come from the project brief,
+          not a verified official ALTAIR listing. This website does not sell the fragrance.
         </p>
         <Reveal delay={150}>
           <h3 className="mt-14 text-[0.65rem] uppercase tracking-[0.4em] text-accent">Key facts</h3>
@@ -595,7 +478,7 @@ function Faq() {
         </Reveal>
         <div className="mt-12 divide-y divide-border/70 border-y border-border/70">
           {FAQS.map((f) => (
-            <details key={f.q} className="group py-6">
+            <details open key={f.q} className="group py-6">
               <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 font-display text-xl tracking-wide text-foreground sm:text-2xl">
                 <h4 className="font-normal">{f.q}</h4>
                 <span className="text-accent transition-transform duration-500 group-open:rotate-45">+</span>
@@ -607,15 +490,12 @@ function Faq() {
         <aside aria-labelledby="sources" className="mt-14 text-xs leading-relaxed text-muted-foreground">
           <h3 id="sources" className="text-[0.65rem] uppercase tracking-[0.4em] text-accent">Sources</h3>
           <p className="mt-4 max-w-2xl">
-            Product facts (notes, size, price, concentration) are first-party information from
-            Sarkar, as published on{" "}
-            <a href="https://www.sarkar.store/pages/know-sarkar" className="underline underline-offset-4 hover:text-foreground">Know Sarkar</a>{" "}
-            and <a href="https://www.sarkar.store" className="underline underline-offset-4 hover:text-foreground">sarkar.store</a>.
-            General background on what "parfum" and fragrance notes mean, according to{" "}
-            <a href="https://en.wikipedia.org/wiki/Perfume" className="underline underline-offset-4 hover:text-foreground" rel="noopener" target="_blank">Perfume (Wikipedia)</a>{" "}
-            and <a href="https://en.wikipedia.org/wiki/Datura" className="underline underline-offset-4 hover:text-foreground" rel="noopener" target="_blank">Datura (Wikipedia)</a>.
+            ALTAIR notes, size and price are supplied project specifications. Sarkar's
+            <a href="https://www.sarkar.store/pages/know-sarkar" className="underline underline-offset-4"> Know Sarkar</a> page provides brand-level information, not confirmation of ALTAIR.
+            General fragrance background: <a href="https://en.wikipedia.org/wiki/Perfume" className="underline underline-offset-4">Perfume (Wikipedia)</a>.
+            IFRA guidance: <a href="https://ifrafragrance.org/safe-use/understanding-the-standards" className="underline underline-offset-4">Understanding the Standards</a>.
           </p>
-          <p className="mt-3">Questions about this page: <a href="mailto:support@sarkar.store" className="underline underline-offset-4 hover:text-foreground">support@sarkar.store</a></p>
+          <p className="mt-3"><a href="/mentions" className="underline underline-offset-4">Sources &amp; mentions</a> distinguishes official information from third-party commentary. No independent product testing is claimed.</p>
         </aside>
       </div>
     </section>
@@ -638,25 +518,25 @@ function FinalCta() {
         </Reveal>
         <Reveal delay={180}>
           <a
-            href="https://www.sarkar.store" target="_blank" rel="noopener"
+            href={OFFICIAL_STORE} target="_blank" rel="noopener"
             className="mt-14 inline-flex items-center gap-4 border border-accent/60 px-12 py-5 text-[0.7rem] uppercase tracking-[0.4em] transition-colors duration-500 hover:bg-accent hover:text-accent-foreground"
           >
-            Shop at sarkar.store ↗
+            Visit official Sarkar store ↗
           </a>
         </Reveal>
         <Reveal delay={280}>
           <p className="mt-8 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-            100 ML Parfum · ₹1,199
+            100 ML concept · Supplied price ₹1,199
           </p>
           <p className="mt-4 text-xs text-muted-foreground">
-            Before you buy:{" "}
+            Official store policies:{" "}
             {POLICIES.slice(0, 3).map(([label, href], i) => (
               <span key={label}>
                 {i > 0 && " · "}
                 <a href={href} className="underline underline-offset-4 hover:text-foreground">{label}</a>
               </span>
             ))}
-            {" · "}Questions? <a href={`mailto:${SUPPORT_EMAIL}`} className="underline underline-offset-4 hover:text-foreground">{SUPPORT_EMAIL}</a>
+            {" · "}Official brand support: <a href={`mailto:${SUPPORT_EMAIL}`} className="underline underline-offset-4 hover:text-foreground">{SUPPORT_EMAIL}</a>
           </p>
         </Reveal>
       </div>
@@ -680,9 +560,10 @@ function Footer() {
             ["Fragrance", "#fragrance"],
             ["Notes", "#notes"],
             ["FAQ", "#faq"],
-            ["About Sarkar", "/about"],
+            ["About the project", "/about"],
+            ["Sources & Mentions", "/mentions"],
             ["Contact", "/about#contact"],
-            ["Sarkar Store", "https://www.sarkar.store"],
+            ["Official Sarkar Store", OFFICIAL_STORE],
           ].map(([label, href]) => (
             <a
               key={label}
@@ -699,7 +580,7 @@ function Footer() {
           <a
             key={label}
             href={href}
-            rel="me noopener noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
             aria-label={`Sarkar on ${label} (opens in a new tab)`}
             className="inline-flex items-center gap-2 py-1 text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
@@ -711,9 +592,9 @@ function Footer() {
       </div>
       <div className="mx-auto mt-10 grid max-w-7xl gap-8 text-sm text-muted-foreground sm:grid-cols-2">
         <address className="not-italic">
-          <p className="text-[0.6rem] uppercase tracking-[0.3em] text-accent">Customer support</p>
+          <p className="text-[0.6rem] uppercase tracking-[0.3em] text-accent">Official Sarkar support</p>
           <a href={`mailto:${SUPPORT_EMAIL}`} className="mt-3 inline-block underline underline-offset-4 hover:text-foreground">{SUPPORT_EMAIL}</a>
-          <p className="mt-2 text-xs">Sarkar is run by Brix Lifestyle Private Limited, India.</p>
+          <p className="mt-2 text-xs">External brand contact, not support for this college project.</p>
         </address>
         <nav aria-label="Store policies">
           <p className="text-[0.6rem] uppercase tracking-[0.3em] text-accent">Policies</p>
@@ -724,9 +605,10 @@ function Footer() {
           </ul>
         </nav>
       </div>
+      <p className="mx-auto mt-10 max-w-7xl text-xs leading-relaxed text-muted-foreground">{DISCLOSURE} Product imagery is a creative project visualization, not verified official ALTAIR packaging.</p>
       <div className="hairline my-10" />
       <p className="mx-auto max-w-7xl text-[0.6rem] uppercase tracking-[0.3em] text-muted-foreground">
-        © {new Date().getFullYear()} Sarkar · ALTAIR. All rights reserved.
+        ALTAIR by Sarkar · Independent academic project
       </p>
     </footer>
   );
