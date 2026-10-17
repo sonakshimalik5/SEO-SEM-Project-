@@ -1,12 +1,14 @@
 export const SITE = "https://altair-midnight-aura.lovable.app";
 export const STORE = "https://www.sarkar.store";
-export const PUBLISHED = "2026-10-08";
-export const UPDATED = "2026-10-15";
+export const OFFICIAL_STORE = `${STORE}/collections/shop-all`;
+export const DISCLOSURE = "This is an independent academic project about ALTAIR by Sarkar. It is not the official Sarkar website and is not affiliated with or endorsed by the brand.";
+export const PROJECT_ID = `${SITE}/#website`;
+export const UPDATED = "2026-10-17";
 export const PRODUCT_IMAGE = `${SITE}/images/altair-product.webp`;
 
 // Official profiles, as linked from the footer of www.sarkar.store
 export const SOCIALS: [string, string][] = [
-  ["Instagram", "https://www.instagram.com/houseofsarkar/"],
+  ["Instagram", "https://www.instagram.com/houseofsarkar/?hl=en"],
   ["YouTube", "https://www.youtube.com/@houseofsarkar"],
   ["X", "https://x.com/houseofsarkar"],
   ["LinkedIn", "https://www.linkedin.com/company/houseofsarkar"],
@@ -30,14 +32,13 @@ export const ORG_SCHEMA = {
   "@id": ORG_ID,
   name: "Sarkar",
   alternateName: "House of Sarkar",
-  legalName: "Brix Lifestyle Private Limited",
   url: `${STORE}/`,
   logo: {
     "@type": "ImageObject",
     url: "https://www.sarkar.store/cdn/shop/files/SARKAR_BLACK_Cropped.png?v=1769150438&width=600",
   },
   description:
-    "Sarkar (House of Sarkar) is a premium, unisex Indian fragrance house. Its parfums are made at 25% oil concentration and sold through www.sarkar.store.",
+    "Sarkar (House of Sarkar) is a fragrance brand. Its official website is www.sarkar.store; this academic project is independent of the brand.",
   email: SUPPORT_EMAIL,
   sameAs: SOCIALS.map(([, url]) => url),
   contactPoint: {

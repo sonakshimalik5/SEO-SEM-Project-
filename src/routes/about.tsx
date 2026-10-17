@@ -1,172 +1,51 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ORG_SCHEMA,
-  ORG_ID,
-  SITE,
-  STORE,
-  UPDATED,
-  SOCIALS,
-  POLICIES,
-  SUPPORT_EMAIL,
-} from "@/lib/brand";
+import { AcademicPage } from "@/components/AcademicPage";
+import { DISCLOSURE, ORG_SCHEMA, ORG_ID, PROJECT_ID, SITE, STORE, UPDATED, SOCIALS, POLICIES, SUPPORT_EMAIL } from "@/lib/brand";
+import { breadcrumbs, WEBSITE_SCHEMA } from "@/lib/project-content";
 
 const URL = `${SITE}/about`;
-
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Sarkar — The Fragrance Brand Behind ALTAIR" },
-      {
-        name: "description",
-        content:
-          "About Sarkar (House of Sarkar), the Indian fragrance brand behind ALTAIR: official store, customer support, policies and social profiles.",
-      },
-      { property: "og:title", content: "About Sarkar — The Fragrance Brand Behind ALTAIR" },
-      {
-        property: "og:description",
-        content: "Who makes ALTAIR, where to buy it, and how to contact Sarkar.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: URL },
+      { title: "About the ALTAIR Academic Project — Sarkar Brand Context" },
+      { name: "description", content: "Independent ALTAIR college project: authorship limitations, source policy, Sarkar brand context, and clear separation from the official store." },
+      { property: "og:title", content: "About the ALTAIR Academic Project" },
+      { property: "og:description", content: DISCLOSURE },
+      { property: "og:type", content: "website" }, { property: "og:url", content: URL },
       { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: URL }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            ORG_SCHEMA,
-            {
-              "@type": "AboutPage",
-              "@id": `${URL}#webpage`,
-              url: URL,
-              name: "About Sarkar",
-              isPartOf: { "@id": `${SITE}/#website` },
-              about: { "@id": ORG_ID },
-              publisher: { "@id": ORG_ID },
-              dateModified: UPDATED,
-              breadcrumb: {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "ALTAIR", item: `${SITE}/` },
-                  { "@type": "ListItem", position: 2, name: "About Sarkar", item: URL },
-                ],
-              },
-            },
-          ],
-        }),
-      },
-    ],
-  }),
-  component: About,
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({
+      "@context": "https://schema.org", "@graph": [ORG_SCHEMA, WEBSITE_SCHEMA, breadcrumbs("/about", "About the project"),
+        { "@type": "AboutPage", "@id": `${URL}#webpage`, url: URL, name: "About the ALTAIR academic project",
+          description: DISCLOSURE, isPartOf: { "@id": PROJECT_ID }, about: { "@id": ORG_ID },
+          dateModified: UPDATED, breadcrumb: { "@id": `${URL}#breadcrumb` } },
+      ],
+    }) }],
+  }), component: About,
 });
-
 const link = "underline underline-offset-4 hover:text-foreground";
-
+const heading = "pt-6 font-display text-3xl text-foreground";
 function About() {
-  return (
-    <div className="min-h-screen bg-background px-6 py-24 lg:px-10">
-      <article className="mx-auto max-w-3xl">
-        <nav aria-label="Breadcrumb" className="text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">ALTAIR</Link> / <span>About Sarkar</span>
-        </nav>
-        <h1 className="mt-10 font-display text-5xl tracking-wide sm:text-6xl">About Sarkar</h1>
-        <p className="mt-4 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-          Updated <time dateTime={UPDATED}>15 October 2026</time>
-        </p>
-
-        <div className="mt-12 space-y-6 text-sm leading-relaxed text-muted-foreground">
-          <p className="font-display text-2xl italic leading-snug text-foreground sm:text-3xl">
-            Anyone can raise their voice. Few can raise the standards.
-          </p>
-          <p>
-            Sarkar, also known as House of Sarkar, is an Indian fragrance house that makes
-            unisex parfums. The brand's idea is what it calls everyday authority: scents you can
-            wear on an ordinary day and still feel in charge. Every Sarkar fragrance is a parfum
-            made at 25% oil concentration. Sarkar is run by Brix Lifestyle Private Limited and sells directly
-            through its official store, <a className={link} href={STORE}>www.sarkar.store</a>.
-          </p>
-          <p>
-            Read the brand in its own words on{" "}
-            <a className={link} href={`${STORE}/pages/know-sarkar`}>Know Sarkar</a>.
-          </p>
-
-          <h2 className="pt-6 font-display text-3xl text-foreground">The idea behind ALTAIR</h2>
-          <p>
-            ALTAIR is Sarkar's after-dark fragrance. It was imagined around one moment: the hour
-            after rain, when the city is quiet, the stone is still wet and the night-blooming
-            flowers have opened. The tagline says it plainly —{" "}
-            <em>for nights that smell like rain and feel like confidence.</em>
-          </p>
-
-          <h2 className="pt-6 font-display text-3xl text-foreground">How it smells</h2>
-          <p>
-            In plain terms, ALTAIR is floral, fruity and woody. The first spray is dark fruit —
-            cherry and mulberry, juicy but not sugary. Within minutes the flowers take over: night
-            jasmine, creamy and cool, with datura adding a greener, more mysterious edge. Hours
-            later what stays on your skin is wood — warm, smooth and quiet.
-          </p>
-          <ul className="list-disc space-y-2 pl-5">
-            <li><strong className="font-normal text-foreground">Top:</strong> cherry, mulberry</li>
-            <li><strong className="font-normal text-foreground">Heart:</strong> night jasmine, datura</li>
-            <li><strong className="font-normal text-foreground">Base:</strong> wood</li>
-            <li><strong className="font-normal text-foreground">Size and price:</strong> 100 ML parfum, ₹1,199</li>
-          </ul>
-
-          <h2 className="pt-6 font-display text-3xl text-foreground">When to wear it</h2>
-          <p>
-            ALTAIR is made for your evenings: dinners, date nights, late drives, and monsoon nights
-            when the air already smells of rain. Like every Sarkar fragrance, it is unisex. See all
-            the details and common questions on the{" "}
-            <Link to="/" hash="faq" className={link}>ALTAIR page</Link>.
-          </p>
-
-          <h2 className="pt-6 font-display text-3xl text-foreground">What Sarkar knows first-hand</h2>
-          <p>
-            Everything about ALTAIR on this site — its notes, concentration, size, price and the
-            occasions it was made for — comes directly from Sarkar, the brand that created it and
-            sells it. Sarkar has not published the names or qualifications of its perfumers, so we
-            don't list any here. General explanations of perfume terms are sourced from{" "}
-            <a className={link} href="https://en.wikipedia.org/wiki/Perfume" target="_blank" rel="noopener">Perfume (Wikipedia)</a>.
-          </p>
-
-          <h2 id="contact" className="pt-6 font-display text-3xl text-foreground">Contact</h2>
-          <p>
-            Customer support: <a className={link} href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
-          </p>
-
-          <h2 className="pt-6 font-display text-3xl text-foreground">Policies</h2>
-          <ul className="list-disc space-y-2 pl-5">
-            {POLICIES.map(([label, href]) => (
-              <li key={label}><a className={link} href={href}>{label}</a></li>
-            ))}
-          </ul>
-
-          <h2 className="pt-6 font-display text-3xl text-foreground">Official profiles</h2>
-          <ul className="list-disc space-y-2 pl-5">
-            {SOCIALS.map(([label, href]) => (
-              <li key={label}><a className={link} href={href} rel="me noopener noreferrer" target="_blank">{label}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <Link
-          to="/"
-          className="mt-16 inline-flex border border-accent/60 px-8 py-4 text-[0.7rem] uppercase tracking-[0.35em] text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-        >
-          Discover ALTAIR
-        </Link>
-        <a
-          href={STORE}
-          target="_blank"
-          rel="noopener"
-          className="ml-0 mt-4 inline-flex px-2 py-4 text-[0.7rem] uppercase tracking-[0.35em] text-muted-foreground hover:text-foreground sm:ml-6"
-        >
-          Visit sarkar.store ↗
-        </a>
-      </article>
-    </div>
-  );
+  return <AcademicPage title="About the project">
+    <h2 className={heading}>What is this website?</h2>
+    <p>This is a college-project fragrance presentation inspired by Sarkar. ALTAIR is the concept in the supplied brief, not a product whose official retail listing has been verified. The page's imagery and scent narrative are creative project material, not evidence of official packaging or a personal fragrance test.</p>
+    <h2 className={heading}>Who created the content?</h2>
+    <p>The student author's name and credentials have not been supplied. No brand-team byline, expert reviewer, perfumer qualification or personal testing experience is claimed. Earlier unsupported brand authorship and publication dates have been removed.</p>
+    <h2 className={heading}>What is known about Sarkar?</h2>
+    <p>Sarkar, also known as House of Sarkar, is a fragrance brand with an <a className={link} href={STORE}>official website</a>. Its <a className={link} href={`${STORE}/pages/know-sarkar`}>Know Sarkar</a> page identifies Bhuvan Bam and Neel Gogia among its co-founders and makes a brand-level 25% oil concentration claim. That statement does not independently verify ALTAIR's specifications. See the <Link to="/mentions" className={link}>sources and mentions</Link> page for founder references and evidence limitations.</p>
+    <h2 className={heading}>Which ALTAIR details are supplied?</h2>
+    <p>The project brief supplies 100 ML parfum, ₹1,199, and cherry, mulberry, night jasmine, datura and wood notes. Concentration, approximately 6–7-hour longevity on clothing, cruelty-free and Made in India positioning remain unverified for ALTAIR. No laboratory testing, certification, customer rating or active ALTAIR10 offer is asserted.</p>
+    <h2 className={heading}>How are sources evaluated?</h2>
+    <p>Official pages establish what the brand says; they are not independent tests. Third-party commentary is separately labelled and is not treated as a verified purchase, endorsement or rating dataset. General perfume guidance is distinct from ALTAIR-specific claims. The <Link to="/" hash="faq" className={link}>visible questions and answers</Link> explain these distinctions.</p>
+    <h2 id="contact" className={heading}>Who handles official store questions?</h2>
+    <p>Sarkar's published brand support address is <a className={link} href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. It is an external brand contact, not this project's student author or customer service. No student contact details have been supplied.</p>
+    <h2 className={heading}>Official store policies</h2>
+    <p>These policies belong to Sarkar's store, not this academic project.</p>
+    <ul className="list-disc space-y-2 pl-5">{POLICIES.map(([label, href]) => <li key={label}><a className={link} href={href}>{label}</a></li>)}</ul>
+    <h2 className={heading}>Official brand profiles</h2>
+    <p>These profiles describe Sarkar, not the academic project.</p>
+    <ul className="list-disc space-y-2 pl-5">{SOCIALS.map(([label, href]) => <li key={label}><a className={link} href={href} target="_blank" rel="noopener noreferrer">{label}</a></li>)}</ul>
+    <p className="pt-6 text-xs">Content revised <time dateTime={UPDATED}>17 October 2026</time>. An original publication date has not been established.</p>
+  </AcademicPage>;
 }
