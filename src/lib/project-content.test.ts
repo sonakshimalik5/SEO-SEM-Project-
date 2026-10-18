@@ -34,7 +34,7 @@ describe("Academic project evidence boundaries", () => {
     }
   });
   test("breadcrumbs use existing self-referencing navigation URLs", () => {
-    for (const [path, name] of [["/about", "About the project"], ["/mentions", "Sources & mentions"]]) {
+    for (const [path, name] of [["/about", "About the project"], ["/mentions", "Sources & mentions"]] as const) {
       const trail = breadcrumbs(path, name);
       assert.deepEqual(trail.itemListElement.map(item => [item.position, item.name, item.item]), [
         [1, "ALTAIR academic project", `${SITE}/`], [2, name, `${SITE}${path}`],
