@@ -445,6 +445,9 @@ function Faq() {
   return (
     <section id="faq" className="relative border-t border-border/60 px-6 py-28 lg:px-10 lg:py-36">
       <div className="mx-auto max-w-4xl">
+        <nav aria-label="Breadcrumb" className="mb-6 text-xs text-muted-foreground">
+          <a href="/" aria-current="page" className="underline underline-offset-4">ALTAIR academic project</a>
+        </nav>
         <Reveal>
           <p className="eyebrow">Questions</p>
         </Reveal>

@@ -10,6 +10,11 @@ export function AcademicPage({ title, children }: { title: string; children: Rea
         <Link to="/about" className="underline underline-offset-4">About the project</Link>
         <Link to="/mentions" className="underline underline-offset-4">Sources &amp; mentions</Link>
       </nav>
+      <nav aria-label="Breadcrumb" className="mt-8 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+        <Link to="/" className="underline underline-offset-4">ALTAIR academic project</Link>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{title}</span>
+      </nav>
       <h1 className="mt-10 font-display text-5xl sm:text-6xl">{title}</h1>
       <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{DISCLOSURE}</p>
       <article className="mt-12 space-y-6 text-sm leading-relaxed text-muted-foreground">{children}</article>

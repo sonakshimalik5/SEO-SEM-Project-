@@ -1,4 +1,4 @@
-import { DISCLOSURE, OFFICIAL_STORE, ORG_ID, ORG_SCHEMA, PROJECT_ID, SITE, UPDATED } from "./brand";
+import { DISCLOSURE, OFFICIAL_STORE, ORG_ID, ORG_SCHEMA, PRODUCT_IMAGE, PROJECT_ID, SITE, UPDATED } from "./brand";
 
 export const FACTS: [string, string][] = [
   ["Product concept", "ALTAIR by Sarkar"],
@@ -41,13 +41,27 @@ export function breadcrumbs(path: string, name: string) {
 
 export const HOME_SCHEMA = {
   "@context": "https://schema.org",
-  "@graph": [ORG_SCHEMA, WEBSITE_SCHEMA,
+  "@graph": [ORG_SCHEMA, WEBSITE_SCHEMA, breadcrumbs("/", "ALTAIR academic project"),
     { "@type": "WebPage", "@id": `${SITE}/#webpage`, url: `${SITE}/`, name: WEBSITE_SCHEMA.name,
       description: DISCLOSURE, isPartOf: { "@id": PROJECT_ID }, about: { "@id": `${SITE}/#product-concept` },
+      mainEntity: { "@id": `${SITE}/#product` }, breadcrumb: { "@id": `${SITE}/#breadcrumb` },
       dateModified: UPDATED, inLanguage: "en-IN" },
+    { "@type": "Product", "@id": `${SITE}/#product`, name: "ALTAIR by Sarkar parfum",
+      url: `${SITE}/`, category: "Parfum", size: "100 ml (supplied project specification)",
+      image: { "@type": "ImageObject", url: PRODUCT_IMAGE,
+        caption: "Creative project visualization of ALTAIR; not verified official ALTAIR packaging." },
+      description: "ALTAIR by Sarkar parfum, presented in an independent academic project. Supplied specifications: 100 ml; cherry and mulberry top notes, night jasmine and datura heart notes, wood base. The displayed reference price is ₹1,199 INR, not a verified retail offer. An official ALTAIR listing has not been confirmed; this website does not sell products.",
+      brand: { "@id": ORG_ID },
+      subjectOf: { "@id": `${SITE}/#product-concept` },
+      additionalProperty: [
+        { "@type": "PropertyValue", name: "Supplied reference price (not a retail offer)", value: "₹1,199 INR for 100 ml" },
+        { "@type": "PropertyValue", name: "Top notes (project brief)", value: "Cherry, Mulberry" },
+        { "@type": "PropertyValue", name: "Heart notes (project brief)", value: "Night Jasmine, Datura" },
+        { "@type": "PropertyValue", name: "Base note (project brief)", value: "Wood" },
+      ] },
     { "@type": "CreativeWork", "@id": `${SITE}/#product-concept`, name: "ALTAIR fragrance concept",
       description: "Academic fragrance concept: 100 ML parfum with cherry, mulberry, night jasmine, datura and wood. Specifications are supplied by the project brief, not a verified official product listing.",
-      about: { "@id": ORG_ID }, isPartOf: { "@id": PROJECT_ID } },
+      about: { "@id": `${SITE}/#product` }, isPartOf: { "@id": PROJECT_ID } },
     { "@type": "FAQPage", "@id": `${SITE}/#faq`, isPartOf: { "@id": `${SITE}/#webpage` },
       mainEntity: FAQS.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
   ],
