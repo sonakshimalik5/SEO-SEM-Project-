@@ -11,3 +11,4 @@
 
 - Keep reusable academic disclosure, evidence-labelled FAQs, and schema relationships in browser-safe shared data modules so visible answers and JSON-LD stay consistent.
 - Describe ALTAIR with a non-commercial Product entity using displayed, explicitly qualified project specifications; retain CreativeWork for the academic presentation and omit Offer and AggregateRating without verified eligible evidence.
+- Test schema entity references and shared FAQ answers; distinguish Schema.org validity from Google's commercial rich-result eligibility so audits cannot trigger fabricated offers or reviews.
