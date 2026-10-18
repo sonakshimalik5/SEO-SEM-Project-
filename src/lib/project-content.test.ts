@@ -11,17 +11,37 @@ function expect<T>(actual: T) {
     },
   };
 }
-import { HOME_SCHEMA, FAQS, FACTS } from "./project-content";
-import { DISCLOSURE, SOCIALS, SITE, OFFICIAL_STORE } from "./brand";
+import { HOME_SCHEMA, FAQS, FACTS, breadcrumbs } from "./project-content";
+import { DISCLOSURE, SOCIALS, SITE, OFFICIAL_STORE, PRODUCT_IMAGE } from "./brand";
 
 describe("Academic project evidence boundaries", () => {
   test("project is not represented as a retailer or rating dataset", () => {
     const schema = JSON.stringify(HOME_SCHEMA);
     expect(schema).not.toContain('"@type":"Offer"');
-    expect(schema).not.toContain('"@type":"Product"');
     expect(schema).not.toContain('"@type":"AggregateRating"');
     expect(schema).not.toContain('"author"');
     expect(schema).not.toContain('"datePublished"');
+  });
+  test("Product describes the displayed academic reference without commercial fields", () => {
+    const product = HOME_SCHEMA["@graph"].find(node => node["@type"] === "Product");
+    assert.ok(product && "name" in product && "description" in product && "image" in product && "additionalProperty" in product);
+    assert.equal(product.name, "ALTAIR by Sarkar parfum");
+    assert.equal(product.image.url, PRODUCT_IMAGE);
+    assert.equal(product.additionalProperty[0]?.value, "₹1,199 INR for 100 ml");
+    assert.ok(product.description.includes("not a verified retail offer"));
+    for (const field of ["offers", "aggregateRating", "review", "sku", "gtin", "mpn", "availability", "seller", "shippingDetails", "hasMerchantReturnPolicy"]) {
+      assert.equal(field in product, false, field);
+    }
+  });
+  test("breadcrumbs use existing self-referencing navigation URLs", () => {
+    for (const [path, name] of [["/about", "About the project"], ["/mentions", "Sources & mentions"]]) {
+      const trail = breadcrumbs(path, name);
+      assert.deepEqual(trail.itemListElement.map(item => [item.position, item.name, item.item]), [
+        [1, "ALTAIR academic project", `${SITE}/`], [2, name, `${SITE}${path}`],
+      ]);
+    }
+    const home = HOME_SCHEMA["@graph"].find(node => node["@type"] === "BreadcrumbList");
+    assert.deepEqual(home, breadcrumbs("/", "ALTAIR academic project"));
   });
   test("brand is external and has only verified brand profiles", () => {
     const brand = HOME_SCHEMA["@graph"].find(node => node["@type"] === "Organization");

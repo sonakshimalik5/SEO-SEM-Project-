@@ -10,4 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep reusable academic disclosure, evidence-labelled FAQs, and schema relationships in browser-safe shared data modules so visible answers and JSON-LD stay consistent.
-- Model the unverified ALTAIR product concept as CreativeWork, not a retail Product or Offer; only add commercial schemas when product-specific evidence and eligibility exist.
+- Describe ALTAIR with a non-commercial Product entity using displayed, explicitly qualified project specifications; retain CreativeWork for the academic presentation and omit Offer and AggregateRating without verified eligible evidence.
