@@ -1,4 +1,5 @@
 # Roadmap
+- [ ] Urgent schema regression: inspect rendered Product, verify vocabulary versus rich-result requirements, and implement only evidence-supported corrections
 - [x] Schema follow-up: non-commercial Product, matching breadcrumbs, and rendered-HTML validation; Offer and ratings intentionally omitted without verified evidence
 - [x] GEO audit fixes (schema, About, socials, llms-full)
 - [x] Brief 2: richer About story, nav link, Instagram icon, copy polish, CTAs to store

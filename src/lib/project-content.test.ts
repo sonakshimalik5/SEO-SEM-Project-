@@ -43,6 +43,32 @@ describe("Academic project evidence boundaries", () => {
     const home = HOME_SCHEMA["@graph"].find(node => node["@type"] === "BreadcrumbList");
     assert.deepEqual(home, breadcrumbs("/", "ALTAIR academic project"));
   });
+  test("schema entity IDs are unique and internal references resolve", () => {
+    const graph = HOME_SCHEMA["@graph"];
+    const ids = graph.map(node => node["@id"]);
+    assert.equal(new Set(ids).size, ids.length);
+    function checkReferences(value: unknown) {
+      if (!value || typeof value !== "object") return;
+      const record = value as Record<string, unknown>;
+      if (typeof record["@id"] === "string" && record["@id"].startsWith(`${SITE}/`)) {
+        assert.ok(ids.includes(record["@id"]), `Unresolved reference: ${record["@id"]}`);
+      }
+      Object.values(record).forEach(checkReferences);
+    }
+    checkReferences(HOME_SCHEMA);
+    const page = graph.find(node => node["@type"] === "WebPage");
+    assert.ok(page && "mainEntity" in page && "breadcrumb" in page);
+    assert.equal(page.url, `${SITE}/`);
+    assert.equal(page.mainEntity["@id"], `${SITE}/#product`);
+    assert.equal(page.breadcrumb["@id"], `${SITE}/#breadcrumb`);
+  });
+  test("FAQ structured answers match the shared evidence-labelled answers", () => {
+    const faq = HOME_SCHEMA["@graph"].find(node => node["@type"] === "FAQPage");
+    assert.ok(faq && "mainEntity" in faq && Array.isArray(faq.mainEntity));
+    assert.deepEqual(faq.mainEntity, FAQS.map(({ q, a }) => ({
+      "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a },
+    })));
+  });
   test("brand is external and has only verified brand profiles", () => {
     const brand = HOME_SCHEMA["@graph"].find(node => node["@type"] === "Organization");
     expect(brand?.["@id"]).toBe("https://www.sarkar.store/#organization");

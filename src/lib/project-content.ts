@@ -46,6 +46,9 @@ export const HOME_SCHEMA = {
       description: DISCLOSURE, isPartOf: { "@id": PROJECT_ID }, about: { "@id": `${SITE}/#product-concept` },
       mainEntity: { "@id": `${SITE}/#product` }, breadcrumb: { "@id": `${SITE}/#breadcrumb` },
       dateModified: UPDATED, inLanguage: "en-IN" },
+    // Schema.org Product has no universal required offers property. Google product
+    // snippets require offers, review, or aggregateRating; none is evidenced here.
+    // Do not turn a supplied reference price into a transaction to satisfy an audit.
     { "@type": "Product", "@id": `${SITE}/#product`, name: "ALTAIR by Sarkar parfum",
       url: `${SITE}/`, category: "Parfum", size: "100 ml (supplied project specification)",
       image: { "@type": "ImageObject", url: PRODUCT_IMAGE,
